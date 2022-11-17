@@ -71,7 +71,7 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
     
     
     func createEnemy(coordA: CGPoint, typeOfEnemy: EnemyTypes) {
-        let enemy = Enemy(typeOfEnemy, self.commonEnemy)
+        let enemy = Enemy(typeOfEnemy)
         enemy.position = coordA
         enemy.name = "enemy_\(enemies.count)"
 //        commonEnemy.passAnimationsByReference(to: enemy)

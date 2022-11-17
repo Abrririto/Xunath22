@@ -57,14 +57,14 @@ class Enemy: SKNode, Collidable, KindOfEnemy, FlyweightAnimatedEnemy, CombatAttr
     private var vision: SKShapeNode { getEnemyVision(angle: 90, size: 250, color: .black, name: "vision", visionAngle)}
     var visionAngle: Double
     
-    init(_ typeOfEnemy: EnemyTypes, _ flyweight: EnemyFlyweight) {
+    init(_ typeOfEnemy: EnemyTypes/*, _ flyweight: EnemyFlyweight*/) {
         self.visionAngle = 45
         self.hasDetectedPlayer = false
         self.hitBox = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 125))
         self.takenDamage = 0
         self.typeOfEnemy = typeOfEnemy
         self.percentualLife = typeOfEnemy.life
-        self.flyweight = flyweight
+//        self.flyweight = flyweight
         self.worldSprite = SKSpriteNode(texture: SKTexture(imageNamed: "common_idle_down"), color: .red, size: CGSize(width: 125, height: 125))
         self.level = 0
         self.lastPos = CGPoint(x: 0, y: 0)

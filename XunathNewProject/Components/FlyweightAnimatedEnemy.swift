@@ -17,7 +17,7 @@ protocol FlyweightAnimatedEnemy {
 extension FlyweightAnimatedEnemy where Self: Enemy {
     func playAnimation(state: AnimationSet, direction: AnimationDirection) {
         self.worldSprite.removeAction(forKey: "spriteAnimation")
-        guard let flyweight = flyweight else { return }
+        guard let flyweight else { return }
         switch state {
         case .idle:
             switch direction {
@@ -44,7 +44,7 @@ extension FlyweightAnimatedEnemy where Self: Enemy {
     
     func playAnimation(state: AnimationSet, combatSprite: SKSpriteNode) {
         combatSprite.removeAction(forKey: "combatAnimation")
-        guard let flyweight = flyweight else { return }
+        guard let flyweight else { return }
         switch state {
         case .combat_idle:
             combatSprite.run(.repeatForever(.animate(with: flyweight.idleCombat, timePerFrame: 0.1)), withKey: "combatAnimation")
