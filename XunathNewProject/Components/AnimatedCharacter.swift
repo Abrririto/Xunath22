@@ -22,10 +22,8 @@ protocol AnimatedCharacter {
     var lastDirection: AnimationDirection? { get set }
     var currentDirection: AnimationDirection? { get set }
     
-    func getAnimation(state: AnimationSet, direction: AnimationDirection) -> [SKTexture]
-    func getAnimation(state: AnimationSet) -> [SKTexture]
-    mutating func playAnimation(state: AnimationSet, direction: AnimationDirection)
-    func playAnimation(state: AnimationSet, combatSprite: SKSpriteNode)
+    func getAnimation(state: AnimationSet, direction: AnimationDirection?) -> [SKTexture]
+    func playAnimation(state: AnimationSet, direction: AnimationDirection?, combatSprite: SKSpriteNode?)
     mutating func initializeAnimations()
 }
 
@@ -52,69 +50,44 @@ class AnimatedCharacterClass: SKSpriteNode, AnimatedCharacter {
 }
 
 extension AnimatedCharacter where Self: SKSpriteNode {
-    func getAnimation(state: AnimationSet, direction: AnimationDirection) -> [SKTexture] {
+    func getAnimation(state: AnimationSet, direction: AnimationDirection?) -> [SKTexture] {
         var frames: [SKTexture] = []
         guard let atlas = atlas else { return frames }
-        let names = (atlas.textureNames.sorted()).filter({ $0.contains(state.rawValue) && $0.contains(direction.rawValue) })
-        
-        for frame in names {
-            frames.append(SKTexture(imageNamed: frame))
+        if let direction {
+            let names = (atlas.textureNames.sorted()).filter({ $0.contains(state.rawValue) && $0.contains(direction.rawValue) })
+            for frame in names { frames.append(SKTexture(imageNamed: frame)) }
+            return frames
+        } else {
+            var names = atlas.textureNames.filter({ $0.contains(state.rawValue) })
+            names.sort(by: { $0.localizedStandardCompare($1) == .orderedAscending })
+            for frame in names { frames.append(SKTexture(imageNamed: frame)) }
+            return frames
         }
-        
-        return frames
     }
     
-    func getAnimation(state: AnimationSet) -> [SKTexture] {
-        var frames: [SKTexture] = []
-        guard let atlas = atlas else { return frames }
-        var names = atlas.textureNames.filter({ $0.contains(state.rawValue) })
-        names.sort(by: { $0.localizedStandardCompare($1) == .orderedAscending })
-        
-        for frame in names {
-            frames.append(SKTexture(imageNamed: frame))
-        }
-        
-        return frames
-    }
-    
-    mutating func playAnimation(state: AnimationSet, direction: AnimationDirection) {
-        
+    func playAnimation(state: AnimationSet, direction: AnimationDirection? = nil, combatSprite: SKSpriteNode? = nil) {
         self.removeAction(forKey: "spriteAnimation")
-        
         switch state {
         case .idle:
+            guard let direction else { return }
             switch direction {
-            case .up:
-                self.run(.repeatForever(.animate(with: self.idleUp, timePerFrame: 0.1)), withKey: "spriteAnimation")
-            case .down:
-                self.run(.repeatForever(.animate(with: self.idleDown, timePerFrame: 0.1)), withKey: "spriteAnimation")
-            case .side:
-                self.run(.repeatForever(.animate(with: self.idleSide, timePerFrame: 0.1)), withKey: "spriteAnimation")
+            case .up: self.run(.repeatForever(.animate(with: self.idleUp, timePerFrame: 0.1)), withKey: "spriteAnimation")
+            case .down: self.run(.repeatForever(.animate(with: self.idleDown, timePerFrame: 0.1)), withKey: "spriteAnimation")
+            case .side: self.run(.repeatForever(.animate(with: self.idleSide, timePerFrame: 0.1)), withKey: "spriteAnimation")
             }
         case .walk:
+            guard let direction else { return }
             switch direction {
-            case .up:
-                self.run(.repeatForever(.animate(with: self.walkUp, timePerFrame: 0.1)), withKey: "spriteAnimation")
-            case .down:
-                self.run(.repeatForever(.animate(with: self.walkDown, timePerFrame: 0.1)), withKey: "spriteAnimation")
-            case .side:
-                self.run(.repeatForever(.animate(with: self.walkSide, timePerFrame: 0.1)), withKey: "spriteAnimation")
+            case .up: self.run(.repeatForever(.animate(with: self.walkUp, timePerFrame: 0.1)), withKey: "spriteAnimation")
+            case .down: self.run(.repeatForever(.animate(with: self.walkDown, timePerFrame: 0.1)), withKey: "spriteAnimation")
+            case .side: self.run(.repeatForever(.animate(with: self.walkSide, timePerFrame: 0.1)), withKey: "spriteAnimation")
             }
-        default:
-            break
-        }
-    }
-    
-    func playAnimation(state: AnimationSet, combatSprite: SKSpriteNode) {
-        combatSprite.removeAction(forKey: "combatAnimation")
-        
-        switch state {
         case .combat_idle:
+            guard let combatSprite else { return }
             combatSprite.run(.repeatForever(.animate(with: self.idleCombat, timePerFrame: 0.1)), withKey: "combatAnimation")
         case .combat_attack:
-            combatSprite.run(.animate(with: self.attackCombat, timePerFrame: 0.1), completion: { self.playAnimation(state: .combat_idle, combatSprite: combatSprite) })
-        default:
-            break
+            guard let combatSprite else { return }
+            combatSprite.run(.animate(with: self.attackCombat, timePerFrame: 0.1), completion: { self.playAnimation(state: .combat_idle, direction: nil, combatSprite: combatSprite) })
         }
     }
     
@@ -125,8 +98,8 @@ extension AnimatedCharacter where Self: SKSpriteNode {
         self.walkUp.append(contentsOf: self.getAnimation(state: .walk, direction: .up))
         self.walkDown.append(contentsOf: self.getAnimation(state: .walk, direction: .down))
         self.walkSide.append(contentsOf: self.getAnimation(state: .walk, direction: .side))
-        self.idleCombat.append(contentsOf: self.getAnimation(state: .combat_idle))
-        self.attackCombat.append(contentsOf: self.getAnimation(state: .combat_attack))
+        self.idleCombat.append(contentsOf: self.getAnimation(state: .combat_idle, direction: nil))
+        self.attackCombat.append(contentsOf: self.getAnimation(state: .combat_attack, direction: nil))
     }
 }
 
