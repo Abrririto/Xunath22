@@ -27,6 +27,7 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         
         setCamera()
         setCharacter()
+        createCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
     }
     
     func setCharacter() {
@@ -69,14 +70,20 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         character.makeTheCorrectAnimationRun(event: event)
     }
     
-    
-    func createEnemy(coordA: CGPoint, typeOfEnemy: EnemyTypes) {
-        let enemy = Enemy(typeOfEnemy)
-        enemy.position = coordA
-        enemy.name = "enemy_\(enemies.count)"
-//        commonEnemy.passAnimationsByReference(to: enemy)
-        enemies.append(enemy)
-        self.addChild(enemy)
-        print("\(String(describing: enemy.name)) was created")
+    func createCollision(_ tileMap: SKTileMapNode) {
+        for col in 0..<tileMap.numberOfColumns {
+            for row in 0..<tileMap.numberOfRows {
+                if tileMap.tileDefinition(atColumn: col, row: row) != nil {
+                    let tileNode = SKSpriteNode()
+                    tileNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 200, height: 200))
+                    tileNode.physicsBody?.affectedByGravity = false
+                    tileNode.physicsBody?.allowsRotation = false
+                    tileNode.physicsBody?.isDynamic = false
+                    tileNode.position = tileMap.centerOfTile(atColumn: col, row: row)
+                    tileNode.position = (CGPoint(x: tileNode.position.x, y: tileNode.position.y + 40))
+                    self.addChild(tileNode)
+                }
+            }
+        }
     }
 }
