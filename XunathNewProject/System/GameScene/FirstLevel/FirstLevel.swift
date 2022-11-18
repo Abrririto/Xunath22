@@ -16,7 +16,6 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
     
     override func sceneDidLoad() {
         physicsWorld.contactDelegate = self
-        
         for enemy in enemies {
             self.addChild(enemy)
         }

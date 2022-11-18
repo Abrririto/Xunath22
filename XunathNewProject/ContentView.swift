@@ -25,6 +25,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             SpriteView(scene: scene)
+//            SpriteView(scene: scene, debugOptions: [.showsPhysics])
         }
     }
 }
