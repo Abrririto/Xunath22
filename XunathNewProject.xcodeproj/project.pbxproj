@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80724B07292B094000171CBC /* SecondLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80724B06292B094000171CBC /* SecondLevel.sks */; };
+		80724B09292BCC7A00171CBC /* ThirdLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80724B08292BCC7A00171CBC /* ThirdLevel.sks */; };
 		80EF34172925B44B00C8495F /* XunathNewProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34162925B44B00C8495F /* XunathNewProjectApp.swift */; };
 		80EF34192925B44B00C8495F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34182925B44B00C8495F /* ContentView.swift */; };
 		80EF341B2925B44C00C8495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EF341A2925B44C00C8495F /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		80724B06292B094000171CBC /* SecondLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SecondLevel.sks; sourceTree = "<group>"; };
+		80724B08292BCC7A00171CBC /* ThirdLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ThirdLevel.sks; sourceTree = "<group>"; };
 		80EF34132925B44B00C8495F /* XunathNewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XunathNewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EF34162925B44B00C8495F /* XunathNewProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XunathNewProjectApp.swift; sourceTree = "<group>"; };
 		80EF34182925B44B00C8495F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			children = (
 				80EF344E2925B5EC00C8495F /* FirstLevel.sks */,
 				80724B06292B094000171CBC /* SecondLevel.sks */,
+				80724B08292BCC7A00171CBC /* ThirdLevel.sks */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				80EF341E2925B44C00C8495F /* Preview Assets.xcassets in Resources */,
 				80EF34552925B61D00C8495F /* Walls.sks in Resources */,
 				80EF34662925B67500C8495F /* Alagard.ttf in Resources */,
+				80724B09292BCC7A00171CBC /* ThirdLevel.sks in Resources */,
 				80EF34652925B67500C8495F /* mori.mp3 in Resources */,
 				80EF341B2925B44C00C8495F /* Assets.xcassets in Resources */,
 				80EF34542925B61D00C8495F /* Assets.xcassets in Resources */,
