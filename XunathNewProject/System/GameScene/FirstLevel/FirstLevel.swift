@@ -19,23 +19,15 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         for enemy in enemies {
             self.addChild(enemy)
         }
-        
         for interactionArea in interactionAreas {
             self.addChild(interactionArea)
         }
         
-        setCamera()
+        self.camera = webcam
+        self.addChild(webcam.setOnMap(webcam))
         character.initializeAnimations()
         self.addChild(character.setOnMap(character))
-        createCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
-    }
-    
-    func setCamera() {
-        self.camera = webcam
-        self.addChild(webcam)
-        webcam.createInteraction()
-        webcam.createTextBox()
-        webcam.setScale(3.5)
+        setCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -60,19 +52,15 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         self.character.makeTheCorrectAnimationRun(event: event)
         self.character.isStoppedAnimation()
     }
-    
-    func createCollision(_ tileMap: SKTileMapNode) {
+}
+
+extension FirstLevel {
+    func setCollision(_ tileMap: SKTileMapNode) {
+        let collision = Collision()
         for col in 0..<tileMap.numberOfColumns {
             for row in 0..<tileMap.numberOfRows {
                 if tileMap.tileDefinition(atColumn: col, row: row) != nil {
-                    let tileNode = SKSpriteNode()
-                    tileNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 200, height: 200))
-                    tileNode.physicsBody?.affectedByGravity = false
-                    tileNode.physicsBody?.allowsRotation = false
-                    tileNode.physicsBody?.isDynamic = false
-                    tileNode.position = tileMap.centerOfTile(atColumn: col, row: row)
-                    tileNode.position = (CGPoint(x: tileNode.position.x, y: tileNode.position.y + 40))
-                    self.addChild(tileNode)
+                    self.addChild(collision.create(tileMap, col: col, row: row))
                 }
             }
         }

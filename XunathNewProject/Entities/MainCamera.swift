@@ -32,6 +32,13 @@ class MainCamera: SKCameraNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setOnMap(_ webcam: MainCamera) -> MainCamera {
+        webcam.createInteraction()
+        webcam.createTextBox()
+        webcam.setScale(3.5)
+        return webcam
+    }
+    
     func createInteraction() {
         let interact = SKLabelNode(text: "Press Z or M to interact")
         let frameSize = 100
@@ -39,8 +46,8 @@ class MainCamera: SKCameraNode {
         interact.verticalAlignmentMode = .center
         interact.horizontalAlignmentMode = .center
         interact.position = CGPoint(x: 0, y: -(frameSize / 3) + 30) // -275
-        interact.isHidden = true
         interact.zPosition = 10
+        interact.isHidden = true
         self.hud["hud_interact"] = interact
         self.addChild(interact)
     }

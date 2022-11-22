@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		80724B07292B094000171CBC /* SecondLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80724B06292B094000171CBC /* SecondLevel.sks */; };
 		80724B09292BCC7A00171CBC /* ThirdLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80724B08292BCC7A00171CBC /* ThirdLevel.sks */; };
+		80A95249292D4EAB005F4315 /* Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A95248292D4EAB005F4315 /* Collision.swift */; };
 		80EF34172925B44B00C8495F /* XunathNewProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34162925B44B00C8495F /* XunathNewProjectApp.swift */; };
 		80EF34192925B44B00C8495F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34182925B44B00C8495F /* ContentView.swift */; };
 		80EF341B2925B44C00C8495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EF341A2925B44C00C8495F /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		80724B06292B094000171CBC /* SecondLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SecondLevel.sks; sourceTree = "<group>"; };
 		80724B08292BCC7A00171CBC /* ThirdLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ThirdLevel.sks; sourceTree = "<group>"; };
+		80A95248292D4EAB005F4315 /* Collision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collision.swift; sourceTree = "<group>"; };
 		80EF34132925B44B00C8495F /* XunathNewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XunathNewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EF34162925B44B00C8495F /* XunathNewProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XunathNewProjectApp.swift; sourceTree = "<group>"; };
 		80EF34182925B44B00C8495F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				80EF34872925BB3600C8495F /* AnimationSet.swift */,
 				80EF34712925B6E600C8495F /* BitMasks.swift */,
 				80EF34702925B6E600C8495F /* Keybinds.swift */,
+				80A95248292D4EAB005F4315 /* Collision.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				80EF34A32925C16400C8495F /* InteractionArea.swift in Sources */,
 				80EF34842925BACD00C8495F /* Collidable.swift in Sources */,
 				80EF34A02925C00A00C8495F /* EnemyFlyweight.swift in Sources */,
+				80A95249292D4EAB005F4315 /* Collision.swift in Sources */,
 				80EF349B2925BFD800C8495F /* EnemyMovevement.swift in Sources */,
 				80EF34822925BAAA00C8495F /* PlayerControllable.swift in Sources */,
 				80EF34882925BB3600C8495F /* AnimationSet.swift in Sources */,
