@@ -25,17 +25,9 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         }
         
         setCamera()
-        setCharacter()
-        createCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
-    }
-    
-    func setCharacter() {
-        character.setScale(3)
-        character.position = CGPoint(x: -17920, y: 8320)
         character.initializeAnimations()
-        character.playAnimation(state: .idle, direction: .down)
-        self.addChild(character)
-        character.levelUp()
+        self.addChild(character.setOnMap(character))
+        createCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
     }
     
     func setCamera() {
@@ -51,6 +43,11 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         character.updatePosition()
     }
     
+    override func keyDown(with event: NSEvent) {
+        character.startMoving(event.keyCode)
+        character.makeTheCorrectAnimationRun(event: event)
+    }
+    
     override func keyUp(with event: NSEvent) {
         switch event.keyCode {
         case WalkKeybinds.UP.rawValue, WalkKeybinds.ALTERNATIVEUP.rawValue,
@@ -62,11 +59,6 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         }
         self.character.makeTheCorrectAnimationRun(event: event)
         self.character.isStoppedAnimation()
-    }
-    
-    override func keyDown(with event: NSEvent) {
-        character.startMoving(event.keyCode)
-        character.makeTheCorrectAnimationRun(event: event)
     }
     
     func createCollision(_ tileMap: SKTileMapNode) {

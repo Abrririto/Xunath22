@@ -74,8 +74,12 @@ class MainCharacter: AnimatedCharacterClass, PlayerControllable, Collidable, Com
         self.level = level
     }
     
-    func printAttributes() {
-        print("currentHealth: \(currentHealth)\ncurrentMana: \(currentMana)")
+    func setOnMap(_ character: MainCharacter) -> MainCharacter{
+        character.setScale(3)
+        character.position = CGPoint(x: -17920, y: 8320)
+        character.playAnimation(state: .idle, direction: .down)
+        character.levelUp()
+        return character
     }
     
 }

@@ -150,6 +150,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80A95247292D4498005F4315 /* GameSceneConfigs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GameSceneConfigs;
+			sourceTree = "<group>";
+		};
 		80EF340A2925B44B00C8495F = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +230,7 @@
 		80EF34422925B46900C8495F /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
+				80A95247292D4498005F4315 /* GameSceneConfigs */,
 				80EF34432925B47B00C8495F /* FirstLevel */,
 			);
 			path = GameScene;
