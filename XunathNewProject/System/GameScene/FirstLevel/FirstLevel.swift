@@ -22,7 +22,7 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         for interactionArea in interactionAreas {
             self.addChild(interactionArea)
         }
-        
+        /// Espero que de conflito grr
         self.camera = webcam
         self.addChild(webcam.setOnMap(webcam))
         character.initializeAnimations()
