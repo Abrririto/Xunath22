@@ -12,7 +12,6 @@
 		80A95249292D4EAB005F4315 /* Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A95248292D4EAB005F4315 /* Collision.swift */; };
 		80EF34172925B44B00C8495F /* XunathNewProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34162925B44B00C8495F /* XunathNewProjectApp.swift */; };
 		80EF34192925B44B00C8495F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34182925B44B00C8495F /* ContentView.swift */; };
-		80EF341B2925B44C00C8495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EF341A2925B44C00C8495F /* Assets.xcassets */; };
 		80EF341E2925B44C00C8495F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EF341D2925B44C00C8495F /* Preview Assets.xcassets */; };
 		80EF34292925B44D00C8495F /* XunathNewProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34282925B44D00C8495F /* XunathNewProjectTests.swift */; };
 		80EF34332925B44D00C8495F /* XunathNewProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34322925B44D00C8495F /* XunathNewProjectUITests.swift */; };
@@ -54,6 +53,9 @@
 		80EF349E2925BFE800C8495F /* EnemyVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF349D2925BFE800C8495F /* EnemyVision.swift */; };
 		80EF34A02925C00A00C8495F /* EnemyFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF349F2925C00A00C8495F /* EnemyFlyweight.swift */; };
 		80EF34A32925C16400C8495F /* InteractionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34A22925C16400C8495F /* InteractionArea.swift */; };
+		898D1C2A292B2E740044F6D0 /* Level1.strings in Resources */ = {isa = PBXBuildFile; fileRef = 898D1C29292B2E740044F6D0 /* Level1.strings */; };
+		89ED1AF0292BF2600038F13C /* GameResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED1AEF292BF2600038F13C /* GameResources.swift */; };
+		89F69BF5292D4BF400C36DFB /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F69BF4292D4BF400C36DFB /* SaveManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +82,6 @@
 		80EF34132925B44B00C8495F /* XunathNewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XunathNewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EF34162925B44B00C8495F /* XunathNewProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XunathNewProjectApp.swift; sourceTree = "<group>"; };
 		80EF34182925B44B00C8495F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		80EF341A2925B44C00C8495F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80EF341D2925B44C00C8495F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80EF341F2925B44C00C8495F /* XunathNewProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XunathNewProject.entitlements; sourceTree = "<group>"; };
 		80EF34242925B44D00C8495F /* XunathNewProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XunathNewProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +126,9 @@
 		80EF349D2925BFE800C8495F /* EnemyVision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyVision.swift; sourceTree = "<group>"; };
 		80EF349F2925C00A00C8495F /* EnemyFlyweight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyFlyweight.swift; sourceTree = "<group>"; };
 		80EF34A22925C16400C8495F /* InteractionArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionArea.swift; sourceTree = "<group>"; };
+		898D1C29292B2E740044F6D0 /* Level1.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Level1.strings; sourceTree = "<group>"; };
+		89ED1AEF292BF2600038F13C /* GameResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResources.swift; sourceTree = "<group>"; };
+		89F69BF4292D4BF400C36DFB /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SaveManager.swift; path = XunathNewProject/Helpers/SaveManager.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +194,6 @@
 				80EF34462925B49200C8495F /* Components */,
 				80EF34162925B44B00C8495F /* XunathNewProjectApp.swift */,
 				80EF34182925B44B00C8495F /* ContentView.swift */,
-				80EF341A2925B44C00C8495F /* Assets.xcassets */,
 				80EF341F2925B44C00C8495F /* XunathNewProject.entitlements */,
 				80EF341C2925B44C00C8495F /* Preview Content */,
 			);
@@ -309,11 +312,13 @@
 		80EF34492925B4CE00C8495F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				898D1C28292B2E5F0044F6D0 /* Localizable */,
 				80EF348F2925BDB700C8495F /* AttributedStringGenerator.swift */,
 				80EF34872925BB3600C8495F /* AnimationSet.swift */,
 				80EF34712925B6E600C8495F /* BitMasks.swift */,
 				80EF34702925B6E600C8495F /* Keybinds.swift */,
 				80A95248292D4EAB005F4315 /* Collision.swift */,
+				89ED1AEF292BF2600038F13C /* GameResources.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 		80EF344C2925B4FA00C8495F /* SaveManager */ = {
 			isa = PBXGroup;
 			children = (
+				89F69BF4292D4BF400C36DFB /* SaveManager.swift */,
 			);
 			path = SaveManager;
 			sourceTree = "<group>";
@@ -439,6 +445,14 @@
 				80EF34A22925C16400C8495F /* InteractionArea.swift */,
 			);
 			path = Wall;
+			sourceTree = "<group>";
+		};
+		898D1C28292B2E5F0044F6D0 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				898D1C29292B2E740044F6D0 /* Level1.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,6 +562,7 @@
 				80EF34532925B61D00C8495F /* Ground.sks in Resources */,
 				80EF344F2925B5EC00C8495F /* FirstLevel.sks in Resources */,
 				80EF34612925B67500C8495F /* menuPrincipal.mp3 in Resources */,
+				898D1C2A292B2E740044F6D0 /* Level1.strings in Resources */,
 				80EF34642925B67500C8495F /* capitalismo.wav in Resources */,
 				80EF34622925B67500C8495F /* ouchie.wav in Resources */,
 				80EF341E2925B44C00C8495F /* Preview Assets.xcassets in Resources */,
@@ -555,7 +570,6 @@
 				80EF34662925B67500C8495F /* Alagard.ttf in Resources */,
 				80724B09292BCC7A00171CBC /* ThirdLevel.sks in Resources */,
 				80EF34652925B67500C8495F /* mori.mp3 in Resources */,
-				80EF341B2925B44C00C8495F /* Assets.xcassets in Resources */,
 				80EF34542925B61D00C8495F /* Assets.xcassets in Resources */,
 				80EF34632925B67500C8495F /* button.wav in Resources */,
 				80724B07292B094000171CBC /* SecondLevel.sks in Resources */,
@@ -598,6 +612,7 @@
 				80EF34822925BAAA00C8495F /* PlayerControllable.swift in Sources */,
 				80EF34882925BB3600C8495F /* AnimationSet.swift in Sources */,
 				80EF348A2925BB4D00C8495F /* CombatSkillsPlayer.swift in Sources */,
+				89F69BF5292D4BF400C36DFB /* SaveManager.swift in Sources */,
 				80EF34942925BF2E00C8495F /* KindOfEnemy.swift in Sources */,
 				80EF346C2925B6B100C8495F /* AudioPlayerImplementation.swift in Sources */,
 				80EF34172925B44B00C8495F /* XunathNewProjectApp.swift in Sources */,
@@ -607,6 +622,7 @@
 				80EF347C2925B96B00C8495F /* MainCharacter.swift in Sources */,
 				80EF34732925B6E600C8495F /* BitMasks.swift in Sources */,
 				80EF34962925BF6200C8495F /* FlyweightAnimatedEnemy.swift in Sources */,
+				89ED1AF0292BF2600038F13C /* GameResources.swift in Sources */,
 				80EF34982925BF8100C8495F /* CombatSkillsEnemy.swift in Sources */,
 				80EF34762925B71C00C8495F /* MainCharModel.swift in Sources */,
 				80EF34862925BB0800C8495F /* CombatAttributes.swift in Sources */,
@@ -772,7 +788,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"XunathNewProject/Preview Content\"";
-				DEVELOPMENT_TEAM = XX7XNXK564;
+				DEVELOPMENT_TEAM = FZWZGGS7F2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -781,6 +797,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArthurMartins.XunathNewProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -799,7 +816,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"XunathNewProject/Preview Content\"";
-				DEVELOPMENT_TEAM = XX7XNXK564;
+				DEVELOPMENT_TEAM = FZWZGGS7F2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -808,6 +825,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArthurMartins.XunathNewProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";

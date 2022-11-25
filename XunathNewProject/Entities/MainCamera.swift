@@ -14,6 +14,8 @@ class MainCamera: SKCameraNode {
     private var hud: [String: SKNode] = [:]
 
     var textBoxHasContent: Bool = false
+    var isSaveMessageShowing = false
+    var lblSaveGame = SKLabelNode()
     
     override init() {
         super.init()
@@ -60,6 +62,23 @@ class MainCamera: SKCameraNode {
         box.isHidden = true
         self.hud["hud_textbox"] = box
         self.addChild(box)
+    }
+    
+    func interactSaveMessage() {
+        lblSaveGame = SKLabelNode(fontNamed: "Alagard")
+        lblSaveGame.text = "Press Z to Save Game!"
+        if !isSaveMessageShowing {
+            
+            let frameSize = 1024
+            self.addChild(lblSaveGame)
+            lblSaveGame.position = CGPoint(x: 0, y: -(frameSize / 3) + 30) // -275
+            lblSaveGame.zPosition = 100
+            lblSaveGame.name = "lblSaveGame"
+            isSaveMessageShowing = true
+        } else {
+            self.childNode(withName: "lblSaveGame")?.removeFromParent()
+            isSaveMessageShowing = false
+        }
     }
     
     @objc func resolutionWasUpdated(notification: Notification) {

@@ -15,4 +15,5 @@ enum BitMasks: UInt32 {
     case interactable = 0b10001
     case collectable = 0b100000
     case endBlock = 0b1000000
+    case savePortal = 0b0101
 }

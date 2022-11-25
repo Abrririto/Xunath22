@@ -43,7 +43,7 @@ class MainCharacter: AnimatedCharacterClass, PlayerControllable, Collidable, Com
     override init() {
         self.level = -1
         self.movementController = []
-        self.maxVelocity = 13
+        self.maxVelocity = 15
         self.hitBox = SKPhysicsBody(rectangleOf: CGSize(width: 50, height: 40))
         super.init()
         atlas = SKTextureAtlas(named: "MainCharacter")

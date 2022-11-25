@@ -13,7 +13,7 @@ class InteractionArea: SKShapeNode, Interactable, Collidable {
     var isInsideArea: Bool = false
     var textContent: [String]
     
-    init(sprite: SKSpriteNode, size: CGSize, textContent: [String]) {
+    init(node: SKSpriteNode, size: CGSize, textContent: [String]) {
         self.hitBox = SKPhysicsBody(rectangleOf: CGSize(width: size.width, height: size.height + (size.height / 2)))
         self.textContent = textContent
         super.init()
@@ -22,8 +22,8 @@ class InteractionArea: SKShapeNode, Interactable, Collidable {
         self.hitBox.categoryBitMask = BitMasks.interactable.rawValue
         self.hitBox.contactTestBitMask = BitMasks.player.rawValue
         self.physicsBody = hitBox
-        self.position = sprite.position
-        self.position.y -= sprite.size.height
+        self.position = node.position
+        self.position.y -= node.size.height
     }
     
     required init?(coder aDecoder: NSCoder) {
