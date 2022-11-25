@@ -11,35 +11,30 @@ import SpriteKit
 class FirstLevel: SKScene, SKPhysicsContactDelegate {
     var character = MainCharacter()
     var webcam = MainCamera()
-    //    var enemies = [Enemy]()
-    //    var interactionAreas = [InteractionArea]()
     var resources: GameResources = GameResources()
     
     override func sceneDidLoad() {
         physicsWorld.contactDelegate = self
-//        for enemy in enemies {
-//            self.addChild(enemy)
-//        }
-//        for interactionArea in interactionAreas {
-//            self.addChild(interactionArea)
-//        }
+        
         self.camera = webcam
         self.addChild(webcam.setOnMap(webcam))
+        
         character.initializeAnimations()
         self.addChild(character.setOnMap(character))
-        setCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
         
-        if let node = self.childNode(withName: "SavePortal") as? SKSpriteNode {
-            createSavePortal(node: node)
+        if let colisionObjects = self.childNode(withName: "ColisionObjects") as? SKTileMapNode {
+            setCollision(colisionObjects)
+        }
+        if let savePortal = self.childNode(withName: "SavePortal") as? SKSpriteNode {
+            createSavePortal(savePortal)
         }
     }
     
-    func createSavePortal(node: SKSpriteNode) {
+    func createSavePortal(_ node: SKSpriteNode) {
         node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: node.size.width / 2, height: node.size.height / 2))
         node.physicsBody?.isDynamic = false
         node.physicsBody?.contactTestBitMask = BitMasks.player.rawValue
         node.physicsBody?.categoryBitMask = BitMasks.savePortal.rawValue
-    }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -54,50 +49,33 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
     
     override func keyUp(with event: NSEvent) {
         switch event.keyCode {
-            case WalkKeybinds.UP.rawValue, WalkKeybinds.ALTERNATIVEUP.rawValue,
-                WalkKeybinds.DOWN.rawValue, WalkKeybinds.ALTERNATIVEDOWN.rawValue,
-                WalkKeybinds.LEFT.rawValue, WalkKeybinds.ALTERNATIVELEFT.rawValue,
-                WalkKeybinds.RIGHT.rawValue, WalkKeybinds.ALTERNATIVERIGHT.rawValue:
-                self.character.stopMoving(event.keyCode)
-            default: print("Movimento não registrado.")
+        case WalkKeybinds.UP.rawValue, WalkKeybinds.ALTERNATIVEUP.rawValue,
+            WalkKeybinds.DOWN.rawValue, WalkKeybinds.ALTERNATIVEDOWN.rawValue,
+            WalkKeybinds.LEFT.rawValue, WalkKeybinds.ALTERNATIVELEFT.rawValue,
+            WalkKeybinds.RIGHT.rawValue, WalkKeybinds.ALTERNATIVERIGHT.rawValue:
+            self.character.stopMoving(event.keyCode)
+        default: print("Movimento não registrado.")
         }
         self.character.makeTheCorrectAnimationRun(event: event)
         self.character.isStoppedAnimation()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        let playerIsBodyA: Bool? = checkPlayer(contact: contact)
-        guard let playerIsBodyA = playerIsBodyA else { return }
+        let playerIsBodyA: Bool? = character.checkCharacter(contact: contact)
+        guard let playerIsBodyA else { return }
         if playerIsBodyA {
             checkSaveContact(contact: contact)
         }
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
-        let playerIsBodyA: Bool? = checkPlayer(contact: contact)
-        guard let playerIsBodyA = playerIsBodyA else { return }
-        
+        let playerIsBodyA: Bool? = character.checkCharacter(contact: contact)
+        guard let playerIsBodyA else { return }
         if playerIsBodyA {
             checkSaveContact(contact: contact)
         } else {
             checkSaveContact(contact: contact)
         }
-    }
-    
-    func checkSaveContact(contact: SKPhysicsContact) {
-        if contact.bodyB.categoryBitMask == BitMasks.savePortal.rawValue {
-            webcam.interactSaveMessage()
-        }
-    }
-    
-
-    func checkPlayer(contact: SKPhysicsContact) -> Bool? {
-        if contact.bodyA.categoryBitMask == BitMasks.player.rawValue {
-            return true
-        } else if contact.bodyB.categoryBitMask == BitMasks.player.rawValue {
-           return false
-        }
-        return nil
     }
     
     func createSKNodeInt(size: CGSize, position: CGPoint, intNumber: Int) -> SKSpriteNode {
@@ -145,6 +123,12 @@ extension FirstLevel {
                     self.addChild(collision.create(tileMap, col: col, row: row))
                 }
             }
+        }
+    }
+    
+    func checkSaveContact(contact: SKPhysicsContact) {
+        if contact.bodyB.categoryBitMask == BitMasks.savePortal.rawValue {
+            webcam.interactSaveMessage()
         }
     }
 }

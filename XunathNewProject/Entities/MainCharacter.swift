@@ -82,4 +82,13 @@ class MainCharacter: AnimatedCharacterClass, PlayerControllable, Collidable, Com
         return character
     }
     
+    func checkCharacter(contact: SKPhysicsContact) -> Bool? {
+        if contact.bodyA.categoryBitMask == BitMasks.player.rawValue {
+            return true
+        } else if contact.bodyB.categoryBitMask == BitMasks.player.rawValue {
+            return false
+        }
+        return nil
+    }
+    
 }
