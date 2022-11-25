@@ -17,18 +17,17 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
     
     override func sceneDidLoad() {
         physicsWorld.contactDelegate = self
-        //        for enemy in enemies {
-        //            self.addChild(enemy)
-        //        }
-        
-        //        for interactionArea in interactionAreas {
-        //            self.addChild(interactionArea)
-        //        }
-        
-        setCamera()
-        setCharacter()
-        createCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
-//        scanThroughInteraction(self.childNode(withName: "InteractableWall") as! SKTileMapNode)
+//        for enemy in enemies {
+//            self.addChild(enemy)
+//        }
+//        for interactionArea in interactionAreas {
+//            self.addChild(interactionArea)
+//        }
+        self.camera = webcam
+        self.addChild(webcam.setOnMap(webcam))
+        character.initializeAnimations()
+        self.addChild(character.setOnMap(character))
+        setCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
         
         if let node = self.childNode(withName: "SavePortal") as? SKSpriteNode {
             createSavePortal(node: node)
@@ -41,22 +40,6 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         node.physicsBody?.contactTestBitMask = BitMasks.player.rawValue
         node.physicsBody?.categoryBitMask = BitMasks.savePortal.rawValue
     }
-    
-    func setCharacter() {
-        character.setScale(3)
-        character.position = CGPoint(x: -17920, y: 8320)
-        character.initializeAnimations()
-        character.playAnimation(state: .idle, direction: .down)
-        self.addChild(character)
-        character.levelUp()
-    }
-    
-    func setCamera() {
-        self.camera = webcam
-        self.addChild(webcam.setOnMap(webcam))
-        character.initializeAnimations()
-        self.addChild(character.setOnMap(character))
-        setCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -81,13 +64,6 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         self.character.makeTheCorrectAnimationRun(event: event)
         self.character.isStoppedAnimation()
     }
-    
-    override func keyDown(with event: NSEvent) {
-        character.startMoving(event.keyCode)
-        character.makeTheCorrectAnimationRun(event: event)
-    }
-    
-    
     
     func didBegin(_ contact: SKPhysicsContact) {
         let playerIsBodyA: Bool? = checkPlayer(contact: contact)
@@ -121,53 +97,8 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         } else if contact.bodyB.categoryBitMask == BitMasks.player.rawValue {
            return false
         }
-        
         return nil
     }
-    
-//    func didEnd(_ contact: SKPhysicsContact) {
-//        var playerIsBodyA: Bool
-//
-//        if contact.bodyA.categoryBitMask == BitMasks.player.rawValue {
-//            playerIsBodyA = true
-//        } else if contact.bodyB.categoryBitMask == BitMasks.player.rawValue {
-//            playerIsBodyA = false
-//        } else {
-//            return
-//        }
-//
-//        if playerIsBodyA {
-//            switch contact.bodyB.categoryBitMask {
-//                case BitMasks.interactable.rawValue:
-//                    guard let bodyB = contact.bodyB.node as? InteractionArea else { return }
-//                    bodyB.isInsideArea = false
-//                    webcam.toggleInteractionHUDNotification(contact: bodyB.isInsideArea)
-//                default:
-//                    break
-//            }
-//        } else {
-//            switch contact.bodyA.categoryBitMask {
-//                case BitMasks.interactable.rawValue:
-//                    guard let bodyA = contact.bodyA.node as? InteractionArea else { return }
-//                    bodyA.isInsideArea = false
-//                    webcam.toggleInteractionHUDNotification(contact: bodyA.isInsideArea)
-//                default:
-//                    break
-//            }
-//        }
-//
-//    }
-    
-    func createCollision(_ tileMap: SKTileMapNode) {
-        for col in 0..<tileMap.numberOfColumns {
-            for row in 0..<tileMap.numberOfRows {
-                if tileMap.tileDefinition(atColumn: col, row: row) != nil {
-                    self.addChild(collision.create(tileMap, col: col, row: row))
-                }
-            }
-        }
-    }
-    
     
     func createSKNodeInt(size: CGSize, position: CGPoint, intNumber: Int) -> SKSpriteNode {
         let tileNode = SKSpriteNode(color: .clear, size: size)
@@ -205,6 +136,18 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
     }
 }
 
+extension FirstLevel {
+    func setCollision(_ tileMap: SKTileMapNode) {
+        let collision = Collision()
+        for col in 0..<tileMap.numberOfColumns {
+            for row in 0..<tileMap.numberOfRows {
+                if tileMap.tileDefinition(atColumn: col, row: row) != nil {
+                    self.addChild(collision.create(tileMap, col: col, row: row))
+                }
+            }
+        }
+    }
+}
 
 enum InteractionTextsLevel1 {
     static var text1 = ["Controls: \n\nUse the arrow keys or WASD to move around. \nPress Z or M to interact.", "Good luck! You'll need it..."]
