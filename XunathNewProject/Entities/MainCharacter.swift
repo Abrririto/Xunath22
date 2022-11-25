@@ -73,7 +73,7 @@ class MainCharacter: AnimatedCharacterClass, PlayerControllable, Collidable, Com
     func setLevelTo(_ level: Int) {
         self.level = level
     }
-    
+    /// MUDEI AQ
     func setOnMap(_ character: MainCharacter) -> MainCharacter{
         character.setScale(3)
         character.position = CGPoint(x: -17920, y: 8320)
