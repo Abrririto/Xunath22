@@ -132,6 +132,9 @@ extension FirstLevel {
         } else {
             character.zPosition = 4
         }
+        if contact.bodyB.categoryBitMask == BitMasks.interactable.rawValue {
+            print("Zona de interação")
+        }
     }
 }
 
