@@ -21,10 +21,12 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         
         character.initializeAnimations()
         self.addChild(character.setOnMap(character))
-        
-        if let colisionObjects = self.childNode(withName: "ColisionObjects") as? SKTileMapNode {
-            setCollision(colisionObjects)
-        }
+        setCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode, configType: .setCollision)
+        setCollision(self.childNode(withName: "SpecialColisionObjects") as! SKTileMapNode, configType: .setCollision)
+        setCollision(self.childNode(withName: "InteractableWall") as! SKTileMapNode, configType: .setInteraction)
+//        if let designAdjust = self.childNode(withName: "DesignAdjusts") as? SKTileMapNode {
+//            setDesignAdjusts(designAdjust)
+//        }
         if let savePortal = self.childNode(withName: "SavePortal") as? SKSpriteNode {
             createSavePortal(savePortal)
         }
@@ -70,44 +72,22 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
     
     func didEnd(_ contact: SKPhysicsContact) {
         let playerIsBodyA: Bool? = character.checkCharacter(contact: contact)
-        guard let playerIsBodyA else { return }
-        if playerIsBodyA {
-            checkSaveContact(contact: contact)
-        } else {
-            checkSaveContact(contact: contact)
-        }
+        guard playerIsBodyA != nil else { return }
+        checkSaveContact(contact: contact)
     }
     
-    func createSKNodeInt(size: CGSize, position: CGPoint, intNumber: Int) -> SKSpriteNode {
-        let tileNode = SKSpriteNode(color: .clear, size: size)
-        tileNode.position = position
-        tileNode.name = "Interactable\(intNumber)"
-        return tileNode
-    }
-    
-    
-    func scanThroughInteraction(_ tileMap: SKTileMapNode) {
-        var interactionNumber = 1
-        var firstBlockPosition: CGPoint?
-        var countBlocks: CGFloat = 0
-        for row in 0..<tileMap.numberOfRows {
-            for col in 0..<tileMap.numberOfColumns {
+    func setDesignAdjusts(_ tileMap: SKTileMapNode) {
+        for col in 0..<tileMap.numberOfColumns {
+            for row in 0..<tileMap.numberOfRows {
                 if tileMap.tileDefinition(atColumn: col, row: row) != nil {
-                    countBlocks += 1
-                    if firstBlockPosition == nil {
-                        firstBlockPosition = tileMap.centerOfTile(atColumn: col, row: row)
-                    }
-                } else if countBlocks != 0 {
-                    guard let blockPosition = firstBlockPosition else { return }
-                    let size = CGSize(width: countBlocks * 200, height: 200)
-                    let middleXPos = (countBlocks * 200)/2
-                    let xPos = (blockPosition.x - 100) + middleXPos
-                    let yPos = blockPosition.y - 100
-                    let node = self.createSKNodeInt(size: size, position: CGPoint(x: xPos, y: yPos), intNumber: interactionNumber)
-                    self.resources.createInteractionArea(sprite: node, size: node.size, textContent: InteractionTextsLevel1.text1)
-                    interactionNumber += 1
-                    countBlocks = 0
-                    firstBlockPosition = nil
+                    let node = SKSpriteNode(color: .clear, size: CGSize(width: 200, height: 200))
+                    node.position = tileMap.centerOfTile(atColumn: col, row: row)
+                    node.position = CGPoint(x: node.position.x + 10, y: node.position.y + 60)
+                    node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
+                    node.physicsBody?.isDynamic = false
+                    node.physicsBody?.contactTestBitMask = BitMasks.player.rawValue
+                    node.physicsBody?.categoryBitMask = BitMasks.designWall.rawValue
+                    self.addChild(node)
                 }
             }
         }
@@ -115,12 +95,29 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
 }
 
 extension FirstLevel {
-    func setCollision(_ tileMap: SKTileMapNode) {
+    func setCollision(_ tileMap: SKTileMapNode, configType: MapConfigTypes) {
+        let interactionWall = InteractionWall()
+        var interactionNumber = 1
+        var firstBlockPosition: CGPoint?
+        var countBlocks: CGFloat = 0
         let collision = Collision()
         for col in 0..<tileMap.numberOfColumns {
             for row in 0..<tileMap.numberOfRows {
-                if tileMap.tileDefinition(atColumn: col, row: row) != nil {
-                    self.addChild(collision.create(tileMap, col: col, row: row))
+                switch configType {
+                case .setCollision:
+                    if tileMap.tileDefinition(atColumn: col, row: row) != nil {
+                        self.addChild(collision.create(tileMap, col: col, row: row))
+                    }
+                case .setInteraction:
+                    if tileMap.tileDefinition(atColumn: col, row: row) != nil {
+                        interactionWall.checkPosition(tileMap, &firstBlockPosition, &countBlocks, col: col, row: row)
+                    } else if countBlocks != 0 {
+                        guard let node = interactionWall.create(&interactionNumber, &firstBlockPosition, &countBlocks) else { return }
+                        self.resources.createInteractionArea(sprite: node, size: node.size, textContent: InteractionTextsLevel1.text0)
+                        self.addChild(node)
+                    }
+                case .setDesignAdjust: break
+                    
                 }
             }
         }
@@ -130,7 +127,18 @@ extension FirstLevel {
         if contact.bodyB.categoryBitMask == BitMasks.savePortal.rawValue {
             webcam.interactSaveMessage()
         }
+        if contact.bodyB.categoryBitMask == BitMasks.designWall.rawValue {
+            character.zPosition = 2
+        } else {
+            character.zPosition = 4
+        }
     }
+}
+
+enum MapConfigTypes: String {
+    case setCollision
+    case setDesignAdjust
+    case setInteraction
 }
 
 enum InteractionTextsLevel1 {

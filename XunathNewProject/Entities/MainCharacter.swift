@@ -50,7 +50,7 @@ class MainCharacter: AnimatedCharacterClass, PlayerControllable, Collidable, Com
         self.hitBox.affectedByGravity = false
         self.hitBox.isDynamic = true
         self.hitBox.allowsRotation = false
-        self.zPosition = 5
+        self.zPosition = 3
         self.hitBox.categoryBitMask = BitMasks.player.rawValue
         self.hitBox.collisionBitMask = BitMasks.wall.rawValue + BitMasks.enemy.rawValue
         self.hitBox.contactTestBitMask = BitMasks.enemyVision.rawValue + BitMasks.collectable.rawValue + BitMasks.interactable.rawValue + BitMasks.endBlock.rawValue
