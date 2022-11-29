@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8031FDB429313B1000A387CC /* InteractionWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8031FDB329313B1000A387CC /* InteractionWall.swift */; };
 		80724B07292B094000171CBC /* SecondLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80724B06292B094000171CBC /* SecondLevel.sks */; };
 		80724B09292BCC7A00171CBC /* ThirdLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80724B08292BCC7A00171CBC /* ThirdLevel.sks */; };
 		80A95249292D4EAB005F4315 /* Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A95248292D4EAB005F4315 /* Collision.swift */; };
@@ -16,7 +17,6 @@
 		80EF34292925B44D00C8495F /* XunathNewProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34282925B44D00C8495F /* XunathNewProjectTests.swift */; };
 		80EF34332925B44D00C8495F /* XunathNewProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34322925B44D00C8495F /* XunathNewProjectUITests.swift */; };
 		80EF34352925B44D00C8495F /* XunathNewProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34342925B44D00C8495F /* XunathNewProjectUITestsLaunchTests.swift */; };
-		80EF344F2925B5EC00C8495F /* FirstLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80EF344E2925B5EC00C8495F /* FirstLevel.sks */; };
 		80EF34532925B61D00C8495F /* Ground.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80EF34502925B61D00C8495F /* Ground.sks */; };
 		80EF34542925B61D00C8495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EF34512925B61D00C8495F /* Assets.xcassets */; };
 		80EF34552925B61D00C8495F /* Walls.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80EF34522925B61D00C8495F /* Walls.sks */; };
@@ -57,6 +57,7 @@
 		896FB6B92935010A005A1BB4 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896FB6B82935010A005A1BB4 /* MainMenuView.swift */; };
 		896FB6BB2935029D005A1BB4 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896FB6BA2935029D005A1BB4 /* SceneManager.swift */; };
 		896FB6BD293504EA005A1BB4 /* StaticScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896FB6BC293504EA005A1BB4 /* StaticScreenSize.swift */; };
+		8976BEB6293656C8003C6A9A /* FirstLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8976BEB5293656C8003C6A9A /* FirstLevel.sks */; };
 		898D1C2A292B2E740044F6D0 /* Level1.strings in Resources */ = {isa = PBXBuildFile; fileRef = 898D1C29292B2E740044F6D0 /* Level1.strings */; };
 		89ED1AF0292BF2600038F13C /* GameResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED1AEF292BF2600038F13C /* GameResources.swift */; };
 		89F69BF5292D4BF400C36DFB /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F69BF4292D4BF400C36DFB /* SaveManager.swift */; };
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8031FDB329313B1000A387CC /* InteractionWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionWall.swift; sourceTree = "<group>"; };
 		80724B06292B094000171CBC /* SecondLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SecondLevel.sks; sourceTree = "<group>"; };
 		80724B08292BCC7A00171CBC /* ThirdLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ThirdLevel.sks; sourceTree = "<group>"; };
 		80A95248292D4EAB005F4315 /* Collision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collision.swift; sourceTree = "<group>"; };
@@ -93,7 +95,6 @@
 		80EF342E2925B44D00C8495F /* XunathNewProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XunathNewProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EF34322925B44D00C8495F /* XunathNewProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XunathNewProjectUITests.swift; sourceTree = "<group>"; };
 		80EF34342925B44D00C8495F /* XunathNewProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XunathNewProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		80EF344E2925B5EC00C8495F /* FirstLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FirstLevel.sks; sourceTree = "<group>"; };
 		80EF34502925B61D00C8495F /* Ground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ground.sks; sourceTree = "<group>"; };
 		80EF34512925B61D00C8495F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80EF34522925B61D00C8495F /* Walls.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Walls.sks; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		896FB6B82935010A005A1BB4 /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		896FB6BA2935029D005A1BB4 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneManager.swift; path = XunathNewProject/Entities/SceneManager.swift; sourceTree = SOURCE_ROOT; };
 		896FB6BC293504EA005A1BB4 /* StaticScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticScreenSize.swift; sourceTree = "<group>"; };
+		8976BEB5293656C8003C6A9A /* FirstLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FirstLevel.sks; sourceTree = "<group>"; };
 		898D1C29292B2E740044F6D0 /* Level1.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Level1.strings; sourceTree = "<group>"; };
 		89ED1AEF292BF2600038F13C /* GameResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResources.swift; sourceTree = "<group>"; };
 		89F69BF4292D4BF400C36DFB /* SaveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SaveManager.swift; path = XunathNewProject/Helpers/SaveManager.swift; sourceTree = SOURCE_ROOT; };
@@ -164,13 +166,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		80A95247292D4498005F4315 /* GameSceneConfigs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GameSceneConfigs;
-			sourceTree = "<group>";
-		};
 		80EF340A2925B44B00C8495F = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +239,6 @@
 		80EF34422925B46900C8495F /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
-				80A95247292D4498005F4315 /* GameSceneConfigs */,
 				80EF34432925B47B00C8495F /* FirstLevel */,
 			);
 			path = GameScene;
@@ -341,6 +335,7 @@
 				80EF348B2925BD5500C8495F /* MainCamera.swift */,
 				80EF347B2925B96B00C8495F /* MainCharacter.swift */,
 				80EF34912925BEC500C8495F /* Enemy.swift */,
+				8031FDB329313B1000A387CC /* InteractionWall.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -375,7 +370,7 @@
 		80EF34562925B63D00C8495F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				80EF344E2925B5EC00C8495F /* FirstLevel.sks */,
+				8976BEB5293656C8003C6A9A /* FirstLevel.sks */,
 				80724B06292B094000171CBC /* SecondLevel.sks */,
 				80724B08292BCC7A00171CBC /* ThirdLevel.sks */,
 			);
@@ -572,11 +567,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				80EF34532925B61D00C8495F /* Ground.sks in Resources */,
-				80EF344F2925B5EC00C8495F /* FirstLevel.sks in Resources */,
 				80EF34612925B67500C8495F /* menuPrincipal.mp3 in Resources */,
 				898D1C2A292B2E740044F6D0 /* Level1.strings in Resources */,
 				80EF34642925B67500C8495F /* capitalismo.wav in Resources */,
 				80EF34622925B67500C8495F /* ouchie.wav in Resources */,
+				8976BEB6293656C8003C6A9A /* FirstLevel.sks in Resources */,
 				80EF341E2925B44C00C8495F /* Preview Assets.xcassets in Resources */,
 				80EF34552925B61D00C8495F /* Walls.sks in Resources */,
 				80EF34662925B67500C8495F /* Alagard.ttf in Resources */,
@@ -641,6 +636,7 @@
 				89ED1AF0292BF2600038F13C /* GameResources.swift in Sources */,
 				80EF34982925BF8100C8495F /* CombatSkillsEnemy.swift in Sources */,
 				80EF34762925B71C00C8495F /* MainCharModel.swift in Sources */,
+				8031FDB429313B1000A387CC /* InteractionWall.swift in Sources */,
 				80EF34862925BB0800C8495F /* CombatAttributes.swift in Sources */,
 				80EF348E2925BD8200C8495F /* TextBox.swift in Sources */,
 				80EF34802925BA7F00C8495F /* Interactable.swift in Sources */,
@@ -832,7 +828,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"XunathNewProject/Preview Content\"";
-				DEVELOPMENT_TEAM = FZWZGGS7F2;
+				DEVELOPMENT_TEAM = XX7XNXK564;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

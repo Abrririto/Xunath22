@@ -27,7 +27,6 @@ class GameResources: SKNode {
     
     func createInteractionArea(sprite: SKSpriteNode, size: CGSize, textContent: [String]) {
         let area = InteractionArea(node: sprite, size: size, textContent: textContent)
-        area.fillColor = .orange
         area.name = "interact_\(interactionAreas.count)"
         interactionAreas.append(area)
         self.addChild(area)

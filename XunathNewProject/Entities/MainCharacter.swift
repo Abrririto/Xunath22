@@ -50,7 +50,7 @@ class MainCharacter: AnimatedCharacterClass, PlayerControllable, Collidable, Com
         self.hitBox.affectedByGravity = false
         self.hitBox.isDynamic = true
         self.hitBox.allowsRotation = false
-        self.zPosition = 5
+        self.zPosition = 3
         self.hitBox.categoryBitMask = BitMasks.player.rawValue
         self.hitBox.collisionBitMask = BitMasks.wall.rawValue + BitMasks.enemy.rawValue
         self.hitBox.contactTestBitMask = BitMasks.enemyVision.rawValue + BitMasks.collectable.rawValue + BitMasks.interactable.rawValue + BitMasks.endBlock.rawValue
@@ -80,6 +80,15 @@ class MainCharacter: AnimatedCharacterClass, PlayerControllable, Collidable, Com
         character.playAnimation(state: .idle, direction: .down)
         character.levelUp()
         return character
+    }
+    
+    func checkCharacter(contact: SKPhysicsContact) -> Bool? {
+        if contact.bodyA.categoryBitMask == BitMasks.player.rawValue {
+            return true
+        } else if contact.bodyB.categoryBitMask == BitMasks.player.rawValue {
+            return false
+        }
+        return nil
     }
     
 }
