@@ -6,20 +6,29 @@
 //
 
 import Foundation
+import SpriteKit
+
+enum Resources {
+    static var mainCharacter = MainCharacter()
+    static var camera = MainCamera()
+}
 
 class SaveManager {
     static var shared = SaveManager()
     
+    var activeScene: SKScene?
+    
     private init() { }
     
     let defaults = UserDefaults.standard
+    var sceneManagerDelegate: SceneChangeable?
     
-    func saveGame(_ newData: MainCharacter) {
+    func saveGame() {
         do {
-            var saveModel = SaveModel(
-                level: newData.level,
-                currentExp: newData.currentExperience,
-                position: newData.position
+            let saveModel = SaveModel(
+                level: Resources.mainCharacter.level,
+                currentExp: Resources.mainCharacter.currentExperience,
+                position: Resources.mainCharacter.position
             )
           
             let jsonEncoder = JSONEncoder()
@@ -35,18 +44,23 @@ class SaveManager {
         }
     }
     
-    func loadSavedData() {
+    func loadSavedData(completion: @escaping () -> Void) {
         if let loadedData = defaults.data(forKey: "mainCharSave") {
             do {
                 let jsonDecoder = JSONDecoder()
                 let data = try jsonDecoder.decode(SaveModel.self, from: loadedData)
                 
+                Resources.mainCharacter.level = data.level
+                Resources.mainCharacter.currentExperience = data.currentExp
+                Resources.mainCharacter.position = data.position
+                sceneManagerDelegate?.changeScene(scene: .FirstLevel)
+               
             } catch {
                 fatalError()
             }
         }
     }
-    
+
     func clearGameData() {
         defaults.removeObject(forKey: "mainCharSave")
     }
@@ -54,10 +68,10 @@ class SaveManager {
     func checkIfSaveExists() -> Bool {
         if let loadedData = defaults.data(forKey: "mainCharSave") {
             if loadedData.isEmpty == false {
-                return true
+                return false
             }
         }
-        return false
+        return true
     }
 }
 

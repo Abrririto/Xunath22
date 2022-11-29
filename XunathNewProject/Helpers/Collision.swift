@@ -8,7 +8,7 @@
 import SpriteKit
 
 struct Collision {
-    func create(_ tileMap: SKTileMapNode, col: Int, row: Int) -> SKSpriteNode {
+    static func create(_ tileMap: SKTileMapNode, col: Int, row: Int) -> SKSpriteNode {
         let tileNode = SKSpriteNode()
         tileNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 200, height: 200))
         tileNode.physicsBody?.affectedByGravity = false
