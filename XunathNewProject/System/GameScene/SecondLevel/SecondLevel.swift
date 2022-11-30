@@ -8,10 +8,10 @@
 import Cocoa
 import SpriteKit
 
-class FirstLevel: SKScene, SKPhysicsContactDelegate {
+class SecondLevel: SKScene, SKPhysicsContactDelegate {
     var character: MainCharacter = Resources.mainCharacter
     var webcam = MainCamera()
-    var gameSceneDelegate: GameSceneProtocol?
+    
     //    var enemies = [Enemy]()
     //    var interactionAreas = [InteractionArea]()
 
@@ -27,32 +27,36 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         character.initializeAnimations()
         self.addChild(character.setOnMap(character))
         setCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode, configType: .setCollision)
-        setCollision(self.childNode(withName: "SpecialColisionObjects") as! SKTileMapNode, configType: .setCollision)
-        setCollision(self.childNode(withName: "InteractableWall") as! SKTileMapNode, configType: .setInteraction)
+//        setCollision(self.childNode(withName: "SpecialColisionObjects") as! SKTileMapNode, configType: .setCollision)
+//        setCollision(self.childNode(withName: "InteractableWall") as! SKTileMapNode, configType: .setInteraction)
 //        if let designAdjust = self.childNode(withName: "DesignAdjusts") as? SKTileMapNode {
 //            setDesignAdjusts(designAdjust)
 //        }
         if let node = self.childNode(withName: "SavePortal") as? SKSpriteNode {
             createSavePortal(node)
         }
-        
-        if let node = self.childNode(withName: "Ladder") as? SKSpriteNode {
-            createLadder(node)
-        }
 //        if let node = self.childNode(withName: "SavePortal2") as? SKSpriteNode {
 //            createSavePortal(node)
 //        }
-        self.addChild(resources)
-        initializeEnemies()
     }
     
-    func createLadder(_ node: SKSpriteNode) {
-        node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: node.size.width / 2, height: node.size.height / 2))
-        node.physicsBody?.isDynamic = false
-        node.physicsBody?.contactTestBitMask = BitMasks.player.rawValue
-        node.physicsBody?.categoryBitMask = BitMasks.ladder.rawValue
+    override func didMove(to view: SKView) {
+        let changeScene = SKSpriteNode(color: .black, size: self.size)
+        changeScene.zPosition = 1000
+        changeScene.alpha = 0
+        self.webcam.addChild(changeScene)
+        
+        self.character.run(.run {
+//            self.gameIsActive = false
+            changeScene.run(.fadeAlpha(to: 1, duration: 0.01), completion: {
+                self.character.run(.move(to: CGPoint(x: 3000, y: -17360), duration: 0.01))
+                changeScene.run(.fadeAlpha(to: 0, duration: 1), completion: {
+//                    self.gameIsActive = true
+                })
+            })
+        })
+       
     }
-    
     func createSavePortal(_ node: SKSpriteNode) {
         node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: node.size.width / 2, height: node.size.height / 2))
         node.physicsBody?.isDynamic = false
@@ -107,26 +111,13 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         guard let playerIsBodyA else { return }
         if playerIsBodyA {
             checkSaveContact(contact: contact)
-            checkLadderContact(contact: contact)
-            checkEnemyVision(contact: contact)
-        } else {
-            checkEnemyVision(contact: contact)
         }
-        
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
         let playerIsBodyA: Bool? = character.checkCharacter(contact: contact)
         guard playerIsBodyA != nil else { return }
         checkSaveContact(contact: contact)
-    }
-    
-    func checkEnemyVision(contact: SKPhysicsContact) {
-        if contact.bodyA.categoryBitMask == BitMasks.enemyVision.rawValue {
-            character.removeFromParent()
-            character.clearMovementBuffer()
-            gameSceneDelegate?.changeScene(scene: .SecondLevel)
-        }
     }
     
     func setDesignAdjusts(_ tileMap: SKTileMapNode) {
@@ -147,7 +138,7 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
     }
 }
 
-extension FirstLevel {
+extension SecondLevel {
     func setCollision(_ tileMap: SKTileMapNode, configType: MapConfigTypes) {
         let interactionWall = InteractionWall()
         var interactionNumber = 1
@@ -188,32 +179,4 @@ extension FirstLevel {
             print("Zona de interação")
         }
     }
-    
-    func checkLadderContact(contact: SKPhysicsContact) {
-        if contact.bodyB.categoryBitMask == BitMasks.ladder.rawValue {
-            character.removeFromParent()
-            character.clearMovementBuffer()
-            gameSceneDelegate?.changeScene(scene: .SecondLevel)
-        }
-    }
-    
-    func initializeEnemies() {
-        resources.createEnemy(coordA: CGPoint(x: -14080, y: 8320), typeOfEnemy: .commomEnemy)
-        resources.enemies[0].lookToAngle(angleToSee: -315, timeTurning: 0.7)
-        resources.enemies[0].moveToX(xPos: -15310, timeWalking: 2)
-        resources.enemies[0].lookToAngle(angleToSee: -135, timeTurning: 0.7)
-        resources.enemies[0].moveToX(xPos: -14080, timeWalking: 2)
-        resources.enemies[0].run(.repeatForever(.sequence(resources.enemies[0].toMove)), withKey: "MovementRoutine")
-    }
-}
-
-enum MapConfigTypes: String {
-    case setCollision
-    case setDesignAdjust
-    case setInteraction
-}
-
-enum InteractionTextsLevel1 {
-    static var text1 = ["Controls: \n\nUse the arrow keys or WASD to move around. \nPress Z or M to interact.", "Good luck! You'll need it..."]
-    static var text0 = ["Be aware: enemies still do their rounds while you read. Careful to not be seen off guard."]
 }

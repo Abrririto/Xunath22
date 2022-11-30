@@ -37,7 +37,7 @@ class MainCamera: SKCameraNode {
     func setOnMap(_ webcam: MainCamera) -> MainCamera {
         webcam.createInteraction()
         webcam.createTextBox()
-        webcam.setScale(18)
+        webcam.setScale(5.0)
         return webcam
     }
     

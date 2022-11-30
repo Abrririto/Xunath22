@@ -9,11 +9,7 @@ import SwiftUI
 import SpriteKit
 import GameplayKit
 
-protocol GameSceneProtocol {
-    func changeScene(scene: SceneList)
-}
-
-struct FirstLevelView: View {
+struct SecondLevelView: View {
     
     @EnvironmentObject var sceneManagerViewModel: SceneManagerViewModel
     
@@ -21,17 +17,17 @@ struct FirstLevelView: View {
     
     var body: some View {
         ZStack {
-            SpriteView(scene: sceneManagerViewModel.firstLevel)
+            SpriteView(scene: sceneManagerViewModel.secondLevel)
                 .focused($focus)
                 .onAppear {
-                    sceneManagerViewModel.firstLevel.gameSceneDelegate = self
+//                    scene.gameSceneDelegate = self
                     focus = true
                 }
         }
     }
 }
 
-extension FirstLevelView: GameSceneProtocol {
+extension SecondLevelView: GameSceneProtocol {
     func changeScene(scene: SceneList) {
         sceneManagerViewModel.changeScene(scene: scene)
     }

@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-extension Enemy{
+extension Enemy {
     
     /// A function that returns a shape of enemy's vision.
     /// - Returns: CGMutablePath.
@@ -68,21 +68,6 @@ extension Enemy{
         enemyVisionShapeConfigs(sprite, color, name, visionAngle)
         enemyVisionColisionConfigs(sprite, path: enemyVisionShape(angle, size))
         return sprite
-    }
-    
-    func hasSeenPlayer() {
-        if hasDetectedPlayer { return }
-        self.hasDetectedPlayer = true
-        
-        let soundFile = SKAction.playSoundFileNamed("ouchie", waitForCompletion: false)
-        
-        if let action = self.action(forKey: "MovementRoutine") {
-            NotificationCenter.default.post(name: Notification.Name("scoreUpdate"), object: nil, userInfo: ["isPositive": false, "value": 1])
-            self.run(.sequence([soundFile,
-                                .run { action.speed = 0 },
-                                .wait(forDuration: 5),
-                                .run { action.speed = 1; self.hasDetectedPlayer = false }]))
-        }
     }
     
 }

@@ -24,7 +24,8 @@ struct SceneManager: View {
             case .CombatScene:
                 EmptyView()
             case .SecondLevel:
-                EmptyView()
+                SecondLevelView()
+                    .environmentObject(viewModel)
             case .ThirdLevel:
                 EmptyView()
         }
@@ -52,7 +53,7 @@ protocol SceneChangeable {
 class SceneManagerViewModel: ObservableObject, SceneChangeable {
     @Published var scene: SceneList = .MainMenu
     
-    @Published var firstLevel: FirstLevel = {
+    lazy var firstLevel: FirstLevel = {
         let scene = GKScene(fileNamed: "FirstLevel")
         if let sceneNode = scene?.rootNode as? FirstLevel {
             sceneNode.size = Size.screenSize
@@ -61,6 +62,17 @@ class SceneManagerViewModel: ObservableObject, SceneChangeable {
         }
         return FirstLevel()
     }()
+    
+    lazy var secondLevel: SecondLevel = {
+        let scene = GKScene(fileNamed: "SecondLevel")
+        if let sceneNode = scene?.rootNode as? SecondLevel {
+            sceneNode.size = Size.screenSize
+            sceneNode.scaleMode = .aspectFill
+            return sceneNode
+        }
+        return SecondLevel()
+    }()
+    
     
     func changeScene(scene: SceneList) {
         self.scene = scene

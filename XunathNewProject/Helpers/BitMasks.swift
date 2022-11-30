@@ -17,4 +17,5 @@ enum BitMasks: UInt32 {
     case endBlock = 0b1000000
     case savePortal = 0b0101
     case designWall = 0b0000
+    case ladder = 0b00110
 }

@@ -94,4 +94,5 @@ class Enemy: SKNode, Collidable, KindOfEnemy, FlyweightAnimatedEnemy, CombatAttr
     func setCombatLevel(_ level: Int) {
         self.level = level
     }
+    
 }

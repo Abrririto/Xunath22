@@ -40,6 +40,7 @@ struct XunathNewProjectApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var token: NSKeyValueObservation?
+    var window: NSWindow!
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Remove a single menu
@@ -62,6 +63,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             guard let menu = app.mainMenu?.item(withTitle: "Edit") else { return }
             app.mainMenu?.removeItem(menu)
         }
+        
+        // Create the SwiftUI view that provides the window contents.
+        let contentView = ContentView()
+
+        // Create the window and set the content view.
+        window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 1024, height: 768),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered, defer: false)
+        window.makeKeyAndOrderFront(self)
+        window.isReleasedWhenClosed = false
+        window.center()
+        window.setFrameAutosaveName("Main Window")
+        window.contentView = NSHostingView(rootView: contentView)
+        
+        let mainScreen: NSScreen = NSScreen.screens[0]
+        window.contentView?.enterFullScreenMode(mainScreen)
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
