@@ -8,8 +8,6 @@
 import Foundation
 import SpriteKit
 
-
-
 class EnemyFlyweight: AnimatedCharacterClass {
     init(type: EnemyTypes) {
         super.init()

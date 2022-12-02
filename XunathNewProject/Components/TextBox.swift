@@ -14,7 +14,6 @@ class TextBox: SKSpriteNode {
     
     override init(texture: SKTexture?, color: NSColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
-        self.label.attributedText = AttributedStringGenerator.shared.createAttributedString(text: "A")
         self.label.horizontalAlignmentMode = .left
         self.label.verticalAlignmentMode = .center
         self.label.numberOfLines = 5

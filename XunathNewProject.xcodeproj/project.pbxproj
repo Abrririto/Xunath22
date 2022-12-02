@@ -36,15 +36,12 @@
 		80EF347A2925B8F100C8495F /* FirstLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34792925B8F100C8495F /* FirstLevel.swift */; };
 		80EF347C2925B96B00C8495F /* MainCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF347B2925B96B00C8495F /* MainCharacter.swift */; };
 		80EF347E2925BA2E00C8495F /* AnimatedCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF347D2925BA2D00C8495F /* AnimatedCharacter.swift */; };
-		80EF34802925BA7F00C8495F /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF347F2925BA7F00C8495F /* Interactable.swift */; };
 		80EF34822925BAAA00C8495F /* PlayerControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34812925BAAA00C8495F /* PlayerControllable.swift */; };
 		80EF34842925BACD00C8495F /* Collidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34832925BACD00C8495F /* Collidable.swift */; };
 		80EF34862925BB0800C8495F /* CombatAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34852925BB0800C8495F /* CombatAttributes.swift */; };
 		80EF34882925BB3600C8495F /* AnimationSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34872925BB3600C8495F /* AnimationSet.swift */; };
 		80EF348A2925BB4D00C8495F /* CombatSkillsPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34892925BB4C00C8495F /* CombatSkillsPlayer.swift */; };
 		80EF348C2925BD5500C8495F /* MainCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF348B2925BD5500C8495F /* MainCamera.swift */; };
-		80EF348E2925BD8200C8495F /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF348D2925BD8200C8495F /* TextBox.swift */; };
-		80EF34902925BDB700C8495F /* AttributedStringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF348F2925BDB700C8495F /* AttributedStringGenerator.swift */; };
 		80EF34922925BEC500C8495F /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34912925BEC500C8495F /* Enemy.swift */; };
 		80EF34942925BF2E00C8495F /* KindOfEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34932925BF2E00C8495F /* KindOfEnemy.swift */; };
 		80EF34962925BF6200C8495F /* FlyweightAnimatedEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34952925BF6200C8495F /* FlyweightAnimatedEnemy.swift */; };
@@ -52,7 +49,8 @@
 		80EF349B2925BFD800C8495F /* EnemyMovevement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF349A2925BFD800C8495F /* EnemyMovevement.swift */; };
 		80EF349E2925BFE800C8495F /* EnemyVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF349D2925BFE800C8495F /* EnemyVision.swift */; };
 		80EF34A02925C00A00C8495F /* EnemyFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF349F2925C00A00C8495F /* EnemyFlyweight.swift */; };
-		80EF34A32925C16400C8495F /* InteractionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF34A22925C16400C8495F /* InteractionArea.swift */; };
+		80EFC64429382FFC00E6ABD3 /* FirstLevelWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFC64329382FFC00E6ABD3 /* FirstLevelWords.swift */; };
+		80EFC6472939468000E6ABD3 /* TextWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80EFC6452939468000E6ABD3 /* TextWall.sks */; };
 		8933281A2935A0F600DB78D8 /* FirstLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893328192935A0F600DB78D8 /* FirstLevelView.swift */; };
 		896FB6B92935010A005A1BB4 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896FB6B82935010A005A1BB4 /* MainMenuView.swift */; };
 		896FB6BB2935029D005A1BB4 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896FB6BA2935029D005A1BB4 /* SceneManager.swift */; };
@@ -114,15 +112,12 @@
 		80EF34792925B8F100C8495F /* FirstLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevel.swift; sourceTree = "<group>"; };
 		80EF347B2925B96B00C8495F /* MainCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCharacter.swift; sourceTree = "<group>"; };
 		80EF347D2925BA2D00C8495F /* AnimatedCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedCharacter.swift; sourceTree = "<group>"; };
-		80EF347F2925BA7F00C8495F /* Interactable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
 		80EF34812925BAAA00C8495F /* PlayerControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControllable.swift; sourceTree = "<group>"; };
 		80EF34832925BACD00C8495F /* Collidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collidable.swift; sourceTree = "<group>"; };
 		80EF34852925BB0800C8495F /* CombatAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatAttributes.swift; sourceTree = "<group>"; };
 		80EF34872925BB3600C8495F /* AnimationSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSet.swift; sourceTree = "<group>"; };
 		80EF34892925BB4C00C8495F /* CombatSkillsPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatSkillsPlayer.swift; sourceTree = "<group>"; };
 		80EF348B2925BD5500C8495F /* MainCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCamera.swift; sourceTree = "<group>"; };
-		80EF348D2925BD8200C8495F /* TextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
-		80EF348F2925BDB700C8495F /* AttributedStringGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringGenerator.swift; sourceTree = "<group>"; };
 		80EF34912925BEC500C8495F /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		80EF34932925BF2E00C8495F /* KindOfEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindOfEnemy.swift; sourceTree = "<group>"; };
 		80EF34952925BF6200C8495F /* FlyweightAnimatedEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyweightAnimatedEnemy.swift; sourceTree = "<group>"; };
@@ -130,7 +125,8 @@
 		80EF349A2925BFD800C8495F /* EnemyMovevement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyMovevement.swift; sourceTree = "<group>"; };
 		80EF349D2925BFE800C8495F /* EnemyVision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyVision.swift; sourceTree = "<group>"; };
 		80EF349F2925C00A00C8495F /* EnemyFlyweight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyFlyweight.swift; sourceTree = "<group>"; };
-		80EF34A22925C16400C8495F /* InteractionArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionArea.swift; sourceTree = "<group>"; };
+		80EFC64329382FFC00E6ABD3 /* FirstLevelWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelWords.swift; sourceTree = "<group>"; };
+		80EFC6452939468000E6ABD3 /* TextWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = TextWall.sks; path = ../../../../../Documents/TextWall.sks; sourceTree = "<group>"; };
 		893328192935A0F600DB78D8 /* FirstLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelView.swift; sourceTree = "<group>"; };
 		896FB6B82935010A005A1BB4 /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		896FB6BA2935029D005A1BB4 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneManager.swift; path = XunathNewProject/Entities/SceneManager.swift; sourceTree = SOURCE_ROOT; };
@@ -249,6 +245,7 @@
 			children = (
 				80EF34792925B8F100C8495F /* FirstLevel.swift */,
 				893328192935A0F600DB78D8 /* FirstLevelView.swift */,
+				80EFC64329382FFC00E6ABD3 /* FirstLevelWords.swift */,
 			);
 			path = FirstLevel;
 			sourceTree = "<group>";
@@ -275,19 +272,16 @@
 		80EF34462925B49200C8495F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				80EF34A12925C16400C8495F /* Wall */,
 				80EF349C2925BFE800C8495F /* EnemyVision */,
 				80EF34992925BFD800C8495F /* EnemyMovement */,
 				80EF34972925BF8100C8495F /* CombatSkillsEnemy.swift */,
 				80EF349F2925C00A00C8495F /* EnemyFlyweight.swift */,
 				80EF34952925BF6200C8495F /* FlyweightAnimatedEnemy.swift */,
 				80EF34932925BF2E00C8495F /* KindOfEnemy.swift */,
-				80EF348D2925BD8200C8495F /* TextBox.swift */,
 				80EF34892925BB4C00C8495F /* CombatSkillsPlayer.swift */,
 				80EF34852925BB0800C8495F /* CombatAttributes.swift */,
 				80EF34832925BACD00C8495F /* Collidable.swift */,
 				80EF34812925BAAA00C8495F /* PlayerControllable.swift */,
-				80EF347F2925BA7F00C8495F /* Interactable.swift */,
 				80EF347D2925BA2D00C8495F /* AnimatedCharacter.swift */,
 			);
 			path = Components;
@@ -318,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				898D1C28292B2E5F0044F6D0 /* Localizable */,
-				80EF348F2925BDB700C8495F /* AttributedStringGenerator.swift */,
 				80EF34872925BB3600C8495F /* AnimationSet.swift */,
 				80EF34712925B6E600C8495F /* BitMasks.swift */,
 				80EF34702925B6E600C8495F /* Keybinds.swift */,
@@ -382,6 +375,7 @@
 			children = (
 				80EF34502925B61D00C8495F /* Ground.sks */,
 				80EF34522925B61D00C8495F /* Walls.sks */,
+				80EFC6452939468000E6ABD3 /* TextWall.sks */,
 			);
 			path = TileMaps;
 			sourceTree = "<group>";
@@ -444,14 +438,6 @@
 				80EF349D2925BFE800C8495F /* EnemyVision.swift */,
 			);
 			path = EnemyVision;
-			sourceTree = "<group>";
-		};
-		80EF34A12925C16400C8495F /* Wall */ = {
-			isa = PBXGroup;
-			children = (
-				80EF34A22925C16400C8495F /* InteractionArea.swift */,
-			);
-			path = Wall;
 			sourceTree = "<group>";
 		};
 		898D1C28292B2E5F0044F6D0 /* Localizable */ = {
@@ -575,6 +561,7 @@
 				80EF341E2925B44C00C8495F /* Preview Assets.xcassets in Resources */,
 				80EF34552925B61D00C8495F /* Walls.sks in Resources */,
 				80EF34662925B67500C8495F /* Alagard.ttf in Resources */,
+				80EFC6472939468000E6ABD3 /* TextWall.sks in Resources */,
 				80724B09292BCC7A00171CBC /* ThirdLevel.sks in Resources */,
 				80EF34652925B67500C8495F /* mori.mp3 in Resources */,
 				80EF34542925B61D00C8495F /* Assets.xcassets in Resources */,
@@ -609,10 +596,10 @@
 				80EF347E2925BA2E00C8495F /* AnimatedCharacter.swift in Sources */,
 				80EF346D2925B6B100C8495F /* AudioFiles.swift in Sources */,
 				80EF347A2925B8F100C8495F /* FirstLevel.swift in Sources */,
+				80EFC64429382FFC00E6ABD3 /* FirstLevelWords.swift in Sources */,
 				80EF34192925B44B00C8495F /* ContentView.swift in Sources */,
 				8933281A2935A0F600DB78D8 /* FirstLevelView.swift in Sources */,
 				80EF34722925B6E600C8495F /* Keybinds.swift in Sources */,
-				80EF34A32925C16400C8495F /* InteractionArea.swift in Sources */,
 				80EF34842925BACD00C8495F /* Collidable.swift in Sources */,
 				80EF34A02925C00A00C8495F /* EnemyFlyweight.swift in Sources */,
 				896FB6BB2935029D005A1BB4 /* SceneManager.swift in Sources */,
@@ -629,7 +616,6 @@
 				80EF34172925B44B00C8495F /* XunathNewProjectApp.swift in Sources */,
 				80EF348C2925BD5500C8495F /* MainCamera.swift in Sources */,
 				80EF34922925BEC500C8495F /* Enemy.swift in Sources */,
-				80EF34902925BDB700C8495F /* AttributedStringGenerator.swift in Sources */,
 				80EF347C2925B96B00C8495F /* MainCharacter.swift in Sources */,
 				80EF34732925B6E600C8495F /* BitMasks.swift in Sources */,
 				80EF34962925BF6200C8495F /* FlyweightAnimatedEnemy.swift in Sources */,
@@ -638,8 +624,6 @@
 				80EF34762925B71C00C8495F /* MainCharModel.swift in Sources */,
 				8031FDB429313B1000A387CC /* InteractionWall.swift in Sources */,
 				80EF34862925BB0800C8495F /* CombatAttributes.swift in Sources */,
-				80EF348E2925BD8200C8495F /* TextBox.swift in Sources */,
-				80EF34802925BA7F00C8495F /* Interactable.swift in Sources */,
 				80EF349E2925BFE800C8495F /* EnemyVision.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,7 +784,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"XunathNewProject/Preview Content\"";
-				DEVELOPMENT_TEAM = FZWZGGS7F2;
+				DEVELOPMENT_TEAM = XX7XNXK564;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

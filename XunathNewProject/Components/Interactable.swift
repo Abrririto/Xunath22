@@ -14,7 +14,7 @@ protocol Interactable {
     func interact() -> Bool
 }
 
-extension Interactable where Self: InteractionArea {
+extension Interactable {
     /// Called when the player interacts with an InteractionArea. If the area has text to be displayed, send a notification to the HUD with the InteractionArea's text array.
     /// - Returns: If there is text to be displayed, returns false to set the gameIsActive variable.
     func interact() -> Bool {
