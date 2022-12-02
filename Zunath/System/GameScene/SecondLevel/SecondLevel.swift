@@ -38,6 +38,8 @@ class SecondLevel: SKScene, SKPhysicsContactDelegate {
 //        if let node = self.childNode(withName: "SavePortal2") as? SKSpriteNode {
 //            createSavePortal(node)
 //        }
+        self.addChild(resources)
+        createEnemy()
     }
     
     override func didMove(to view: SKView) {
@@ -178,5 +180,134 @@ extension SecondLevel {
         if contact.bodyB.categoryBitMask == BitMasks.interactable.rawValue {
             print("Zona de interação")
         }
+    }
+    
+    func createEnemy() {
+        resources.createEnemy(coordA: CGPoint(x: -8640, y: -17280), typeOfEnemy: .commomEnemy)
+        resources.enemies[0].lookToAngle(angleToSee: -135, timeTurning: 0.7)
+        resources.enemies[0].moveToX(xPos: -4480, timeWalking: 5)
+        resources.enemies[0].lookToAngle(angleToSee: -45, timeTurning: 0.7)
+        resources.enemies[0].moveToY(yPos: -16000, timeWalking: 2)
+        resources.enemies[0].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[0].moveToX(xPos: -7360, timeWalking: 3)
+        resources.enemies[0].lookToAngle(angleToSee: -45, timeTurning: 0.7)
+        resources.enemies[0].moveToY(yPos: -3360, timeWalking: 12)
+        resources.enemies[0].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[0].moveToX(xPos: -8640, timeWalking: 3)
+        resources.enemies[0].lookToAngle(angleToSee: -225, timeTurning: 0.7)
+        resources.enemies[0].moveToY(yPos: -17280, timeWalking: 12)
+        resources.enemies[0].run(.repeatForever(.sequence(resources.enemies[0].toMove)), withKey: "MovementRoutine")
+
+        resources.createEnemy(coordA: CGPoint(x: 3360, y: -14400), typeOfEnemy: .commomEnemy)
+        resources.enemies[1].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[1].moveToX(xPos: 1920, timeWalking: 3)
+        resources.enemies[1].lookToAngle(angleToSee: -225, timeTurning: 0.7)
+        resources.enemies[1].moveToY(yPos: -16640, timeWalking: 4)
+        resources.enemies[1].lookToAngle(angleToSee: -45, timeTurning: 0.7)
+        resources.enemies[1].moveToY(yPos: -14400, timeWalking: 4)
+        resources.enemies[1].lookToAngle(angleToSee: -135, timeTurning: 0.7)
+        resources.enemies[1].moveToX(xPos: 3360, timeWalking: 3)
+        resources.enemies[1].run(.repeatForever(.sequence(resources.enemies[1].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 2000, y: -11760), typeOfEnemy: .commomEnemy)
+        resources.enemies[2].lookToAngle(angleToSee: -225, timeTurning: 0.7)
+        resources.enemies[2].moveToY(yPos: -13600, timeWalking: 3)
+        resources.enemies[2].lookToAngle(angleToSee: -45, timeTurning: 0.7)
+        resources.enemies[2].moveToY(yPos: -11760, timeWalking: 3)
+        resources.enemies[2].run(.repeatForever(.sequence(resources.enemies[2].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 4800, y: -16320), typeOfEnemy: .commomEnemy)
+        resources.enemies[3].lookToAngle(angleToSee: -45, timeTurning: 0.7)
+        resources.enemies[3].moveToY(yPos: -11900, timeWalking: 6)
+        resources.enemies[3].lookToAngle(angleToSee: -225, timeTurning: 0.7)
+        resources.enemies[3].moveToY(yPos: -16320, timeWalking: 6)
+        resources.enemies[3].run(.repeatForever(.sequence(resources.enemies[3].toMove)), withKey: "MovementRoutine")
+     
+        
+        resources.createEnemy(coordA: CGPoint(x: 7680, y: -6240), typeOfEnemy: .commomEnemy)
+        resources.enemies[4].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[4].moveToX(xPos: 5120, timeWalking: 3)
+        resources.enemies[4].lookToAngle(angleToSee: -135, timeTurning: 0.7)
+        resources.enemies[4].moveToX(xPos: 7680, timeWalking: 3)
+        resources.enemies[4].run(.repeatForever(.sequence(resources.enemies[4].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 2880, y: -6240), typeOfEnemy: .commomEnemy)
+        resources.enemies[5].lookToAngle(angleToSee: -135, timeTurning: 0)
+        resources.enemies[5].run(.repeatForever(.sequence(resources.enemies[5].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 5280, y: -10640), typeOfEnemy: .commomEnemy)
+        resources.enemies[6].lookToAngle(angleToSee: -45, timeTurning: 0)
+        resources.enemies[6].run(.repeatForever(.sequence(resources.enemies[6].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 1500, y: -9760), typeOfEnemy: .commomEnemy)
+        resources.enemies[7].lookToAngle(angleToSee: -135, timeTurning: 0)
+        resources.enemies[7].run(.repeatForever(.sequence(resources.enemies[7].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: -6240, y: -7680), typeOfEnemy: .commomEnemy)
+        resources.enemies[8].lookToAngle(angleToSee: -135, timeTurning: 0.7)
+        resources.enemies[8].moveToX(xPos: -3360, timeWalking: 3)
+        resources.enemies[8].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[8].moveToX(xPos: -6240, timeWalking: 3)
+        resources.enemies[8].run(.repeatForever(.sequence(resources.enemies[8].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: -4100, y: -4880), typeOfEnemy: .commomEnemy)
+        resources.enemies[9].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[9].moveToX(xPos: -6240, timeWalking: 3)
+        resources.enemies[9].lookToAngle(angleToSee: -135, timeTurning: 0.7)
+        resources.enemies[9].moveToX(xPos: -4100, timeWalking: 3)
+        resources.enemies[9].run(.repeatForever(.sequence(resources.enemies[9].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 1760, y: 4800), typeOfEnemy: .commomEnemy)
+        resources.enemies[10].lookToAngle(angleToSee: -225, timeTurning: 0.7)
+        resources.enemies[10].moveToY(yPos: -2000, timeWalking: 8)
+        resources.enemies[10].lookToAngle(angleToSee: -45, timeTurning: 0.7)
+        resources.enemies[10].moveToY(yPos: 4800, timeWalking: 8)
+        resources.enemies[10].run(.repeatForever(.sequence(resources.enemies[10].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 860, y: 5760), typeOfEnemy: .commomEnemy)
+        resources.enemies[11].lookToAngle(angleToSee: -225, timeTurning: 0.7)
+        resources.enemies[11].moveToY(yPos: 5280, timeWalking: 4)
+        resources.enemies[11].lookToAngle(angleToSee: -45, timeTurning: 0.7)
+        resources.enemies[11].moveToY(yPos: 5760, timeWalking: 4)
+        resources.enemies[11].run(.repeatForever(.sequence(resources.enemies[11].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: -1280, y: 3800), typeOfEnemy: .commomEnemy)
+        resources.enemies[12].lookToAngle(angleToSee: -225, timeTurning: 0)
+        resources.enemies[12].run(.repeatForever(.sequence(resources.enemies[12].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 160, y: 3800), typeOfEnemy: .commomEnemy)
+        resources.enemies[13].lookToAngle(angleToSee: -225, timeTurning: 0)
+        resources.enemies[13].run(.repeatForever(.sequence(resources.enemies[13].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: -1280, y: 2720), typeOfEnemy: .commomEnemy)
+        resources.enemies[14].lookToAngle(angleToSee: -45, timeTurning: 0)
+        resources.enemies[14].run(.repeatForever(.sequence(resources.enemies[14].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: 160, y: 2720), typeOfEnemy: .commomEnemy)
+        resources.enemies[15].lookToAngle(angleToSee: -45, timeTurning: 0)
+        resources.enemies[15].run(.repeatForever(.sequence(resources.enemies[15].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: -1920, y: 8000), typeOfEnemy: .commomEnemy)
+        resources.enemies[16].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[16].moveToX(xPos: -3200, timeWalking: 4)
+        resources.enemies[16].lookToAngle(angleToSee: -135, timeTurning: 0.7)
+        resources.enemies[16].moveToX(xPos: -1920, timeWalking: 4)
+        resources.enemies[16].run(.repeatForever(.sequence(resources.enemies[16].toMove)), withKey: "MovementRoutine")
+        
+        resources.createEnemy(coordA: CGPoint(x: -3840, y: 7040), typeOfEnemy: .commomEnemy)
+        resources.enemies[17].lookToAngle(angleToSee: -135, timeTurning: 0.7)
+        resources.enemies[17].moveToX(xPos: -2240, timeWalking: 3)
+        resources.enemies[17].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[17].moveToX(xPos: -3840, timeWalking: 3)
+        resources.enemies[17].run(.repeatForever(.sequence(resources.enemies[17].toMove)), withKey: "MovementRoutine")
+        
+        
+        resources.createEnemy(coordA: CGPoint(x: -1920, y: 6400), typeOfEnemy: .commomEnemy)
+        resources.enemies[18].lookToAngle(angleToSee: -315, timeTurning: 0.7)
+        resources.enemies[18].moveToX(xPos: -3200, timeWalking: 4)
+        resources.enemies[18].lookToAngle(angleToSee: -135, timeTurning: 0.7)
+        resources.enemies[18].moveToX(xPos: -1920, timeWalking: 3)
+        resources.enemies[18].run(.repeatForever(.sequence(resources.enemies[18].toMove)), withKey: "MovementRoutine")
+        
     }
 }

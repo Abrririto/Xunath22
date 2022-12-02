@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F15B7E229399D31009D1F62 /* LifeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F15B7E129399D31009D1F62 /* LifeBar.swift */; };
+		5FC5437329398A3500168F66 /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5437029398A3400168F66 /* CombatScene.swift */; };
+		5FC5437429398A3500168F66 /* CombatSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5437129398A3400168F66 /* CombatSceneView.swift */; };
+		5FC5437529398A3500168F66 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5437229398A3500168F66 /* StatusBarView.swift */; };
+		5FC5437729398A5A00168F66 /* CombatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5437629398A5A00168F66 /* CombatViewModel.swift */; };
+		5FC5437929398B9B00168F66 /* CombatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5437829398B9B00168F66 /* CombatButton.swift */; };
+		5FC5437B29398BE000168F66 /* CombatButtonSUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5437A29398BE000168F66 /* CombatButtonSUI.swift */; };
+		5FC5437D29398C4800168F66 /* StaticActualScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5437C29398C4800168F66 /* StaticActualScene.swift */; };
+		5FC5437F2939915900168F66 /* StaticEnemyThatSeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5437E2939915900168F66 /* StaticEnemyThatSeen.swift */; };
+		5FC54381293994DA00168F66 /* AnimatedEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC54380293994DA00168F66 /* AnimatedEnemy.swift */; };
 		5FFD175F2938171900EB0F34 /* ZunathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD175E2938171900EB0F34 /* ZunathApp.swift */; };
 		5FFD17612938171900EB0F34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD17602938171900EB0F34 /* ContentView.swift */; };
 		5FFD17632938171C00EB0F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD17622938171C00EB0F34 /* Assets.xcassets */; };
@@ -86,6 +96,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F15B7E129399D31009D1F62 /* LifeBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeBar.swift; sourceTree = "<group>"; };
+		5FC5437029398A3400168F66 /* CombatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
+		5FC5437129398A3400168F66 /* CombatSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatSceneView.swift; sourceTree = "<group>"; };
+		5FC5437229398A3500168F66 /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		5FC5437629398A5A00168F66 /* CombatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatViewModel.swift; sourceTree = "<group>"; };
+		5FC5437829398B9B00168F66 /* CombatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatButton.swift; sourceTree = "<group>"; };
+		5FC5437A29398BE000168F66 /* CombatButtonSUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatButtonSUI.swift; sourceTree = "<group>"; };
+		5FC5437C29398C4800168F66 /* StaticActualScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticActualScene.swift; sourceTree = "<group>"; };
+		5FC5437E2939915900168F66 /* StaticEnemyThatSeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticEnemyThatSeen.swift; sourceTree = "<group>"; };
+		5FC54380293994DA00168F66 /* AnimatedEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedEnemy.swift; sourceTree = "<group>"; };
 		5FFD175B2938171900EB0F34 /* Zunath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zunath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFD175E2938171900EB0F34 /* ZunathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZunathApp.swift; sourceTree = "<group>"; };
 		5FFD17602938171900EB0F34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -176,6 +196,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FC5436D293989E900168F66 /* CombatScene */ = {
+			isa = PBXGroup;
+			children = (
+				5FC5437629398A5A00168F66 /* CombatViewModel.swift */,
+				5FC5437029398A3400168F66 /* CombatScene.swift */,
+				5FC5437129398A3400168F66 /* CombatSceneView.swift */,
+				5FC5437229398A3500168F66 /* StatusBarView.swift */,
+			);
+			path = CombatScene;
+			sourceTree = "<group>";
+		};
 		5FFD17522938171900EB0F34 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +274,7 @@
 		5FFD180729391BFB00EB0F34 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5F15B7E129399D31009D1F62 /* LifeBar.swift */,
 				5FFD180829391BFB00EB0F34 /* InteractionWall.swift */,
 				5FFD180929391BFB00EB0F34 /* Enemy.swift */,
 				5FFD180A29391BFB00EB0F34 /* MainCharacter.swift */,
@@ -254,6 +286,9 @@
 		5FFD180C29391BFB00EB0F34 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5FC54380293994DA00168F66 /* AnimatedEnemy.swift */,
+				5FC5437A29398BE000168F66 /* CombatButtonSUI.swift */,
+				5FC5437829398B9B00168F66 /* CombatButton.swift */,
 				5FFD180D29391BFB00EB0F34 /* AnimatedCharacter.swift */,
 				5FFD180E29391BFB00EB0F34 /* Interactable.swift */,
 				5FFD180F29391BFB00EB0F34 /* Wall */,
@@ -309,6 +344,8 @@
 				5FFD182629391BFB00EB0F34 /* AttributedStringGenerator.swift */,
 				5FFD182729391BFB00EB0F34 /* Localizable */,
 				5FFD182929391BFB00EB0F34 /* BitMasks.swift */,
+				5FC5437C29398C4800168F66 /* StaticActualScene.swift */,
+				5FC5437E2939915900168F66 /* StaticEnemyThatSeen.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -332,6 +369,7 @@
 		5FFD182C29391BFB00EB0F34 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				5FC5436D293989E900168F66 /* CombatScene */,
 				5FFD182D29391BFB00EB0F34 /* GameScene */,
 				5FFD183429391BFB00EB0F34 /* SceneManager */,
 				5FFD183629391BFB00EB0F34 /* SoundManager */,
@@ -614,6 +652,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FFD186B29391BFB00EB0F34 /* AttributedStringGenerator.swift in Sources */,
+				5FC5437329398A3500168F66 /* CombatScene.swift in Sources */,
+				5FC5437729398A5A00168F66 /* CombatViewModel.swift in Sources */,
+				5F15B7E229399D31009D1F62 /* LifeBar.swift in Sources */,
 				5FFD186829391BFB00EB0F34 /* Collision.swift in Sources */,
 				5FFD186E29391BFB00EB0F34 /* MainCharModel.swift in Sources */,
 				5FFD185629391BFB00EB0F34 /* AnimatedCharacter.swift in Sources */,
@@ -633,6 +674,7 @@
 				5FFD185C29391BFB00EB0F34 /* TextBox.swift in Sources */,
 				5FFD186429391BFB00EB0F34 /* AnimationSet.swift in Sources */,
 				5FFD187329391BFB00EB0F34 /* SceneManager.swift in Sources */,
+				5FC5437F2939915900168F66 /* StaticEnemyThatSeen.swift in Sources */,
 				5FFD188729391C6D00EB0F34 /* Collision.swift in Sources */,
 				5FFD187629391BFB00EB0F34 /* AudioPlayerImplementation.swift in Sources */,
 				5FFD17612938171900EB0F34 /* ContentView.swift in Sources */,
@@ -643,15 +685,21 @@
 				5FFD186A29391BFB00EB0F34 /* SaveManager.swift in Sources */,
 				5FFD185429391BFB00EB0F34 /* MainCharacter.swift in Sources */,
 				5FFD185B29391BFB00EB0F34 /* CombatSkillsEnemy.swift in Sources */,
+				5FC5437429398A3500168F66 /* CombatSceneView.swift in Sources */,
+				5FC5437929398B9B00168F66 /* CombatButton.swift in Sources */,
+				5FC5437D29398C4800168F66 /* StaticActualScene.swift in Sources */,
 				5FFD186129391BFB00EB0F34 /* KindOfEnemy.swift in Sources */,
+				5FC5437B29398BE000168F66 /* CombatButtonSUI.swift in Sources */,
 				5FFD186329391BFB00EB0F34 /* FlyweightAnimatedEnemy.swift in Sources */,
 				5FFD186029391BFB00EB0F34 /* CombatAttributes.swift in Sources */,
 				5FFD185829391BFB00EB0F34 /* InteractionArea.swift in Sources */,
 				5FFD186729391BFB00EB0F34 /* StaticScreenSize.swift in Sources */,
+				5FC54381293994DA00168F66 /* AnimatedEnemy.swift in Sources */,
 				5FFD186F29391BFB00EB0F34 /* SecondLevel.swift in Sources */,
 				5FFD185229391BFB00EB0F34 /* InteractionWall.swift in Sources */,
 				5FFD175F2938171900EB0F34 /* ZunathApp.swift in Sources */,
 				5FFD186629391BFB00EB0F34 /* GameResources.swift in Sources */,
+				5FC5437529398A3500168F66 /* StatusBarView.swift in Sources */,
 				5FFD187029391BFB00EB0F34 /* SecondLevelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

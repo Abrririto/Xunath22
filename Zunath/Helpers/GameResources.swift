@@ -18,6 +18,7 @@ class GameResources: SKNode {
         super.init()
         
         commonEnemy.initializeAnimations()
+        commonEnemy.initializeEnemyAnimations()
     }
     
     required init?(coder aDecoder: NSCoder) {

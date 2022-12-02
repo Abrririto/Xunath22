@@ -91,6 +91,20 @@ extension AnimatedCharacter where Self: SKSpriteNode {
         }
     }
     
+    func playAnimation(state: AnimationSet, combatSprite: SKSpriteNode, completion: () -> ()) {
+        combatSprite.removeAction(forKey: "combatAnimation")
+        
+        switch state {
+        case .combat_idle:
+            combatSprite.run(.repeatForever(.animate(with: self.idleCombat, timePerFrame: 0.1)), withKey: "combatAnimation")
+        case .combat_attack:
+            combatSprite.run(.animate(with: self.attackCombat, timePerFrame: 0.1), completion: { self.playAnimation(state: .combat_idle, combatSprite: combatSprite) })
+        default:
+            break
+        }
+        
+        completion()
+    }
     mutating func initializeAnimations() {
         self.idleUp.append(contentsOf: self.getAnimation(state: .idle, direction: .up))
         self.idleDown.append(contentsOf: self.getAnimation(state: .idle, direction: .down))

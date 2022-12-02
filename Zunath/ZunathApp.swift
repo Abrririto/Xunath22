@@ -68,18 +68,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let contentView = ContentView()
 
         // Create the window and set the content view.
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 1024, height: 768),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.makeKeyAndOrderFront(self)
-        window.isReleasedWhenClosed = false
-        window.center()
-        window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: contentView)
-        
-        let mainScreen: NSScreen = NSScreen.screens[0]
-        window.contentView?.enterFullScreenMode(mainScreen)
+//        window = NSWindow(
+//            contentRect: NSRect(x: 0, y: 0, width: 1024, height: 768),
+//            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+//            backing: .buffered, defer: false)
+//        window.makeKeyAndOrderFront(self)
+//        window.isReleasedWhenClosed = false
+//        window.center()
+//        window.setFrameAutosaveName("Main Window")
+//        window.contentView = NSHostingView(rootView: contentView)
+//        
+//        let mainScreen: NSScreen = NSScreen.screens[0]
+//        window.contentView?.enterFullScreenMode(mainScreen)
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

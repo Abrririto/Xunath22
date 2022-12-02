@@ -22,7 +22,8 @@ struct SceneManager: View {
                 FirstLevelView()
                     .environmentObject(viewModel)
             case .CombatScene:
-                EmptyView()
+                CombatSceneView()
+                    .environmentObject(viewModel)
             case .SecondLevel:
                 SecondLevelView()
                     .environmentObject(viewModel)
@@ -39,13 +40,14 @@ struct SceneManager_Previews: PreviewProvider {
     }
 }
 
-enum SceneList: String {
+enum SceneList: String, Codable {
     case MainMenu
     case FirstLevel
     case SecondLevel
     case ThirdLevel
     case CombatScene
 }
+
 protocol SceneChangeable {
     func changeScene(scene: SceneList)
 }
@@ -75,7 +77,13 @@ class SceneManagerViewModel: ObservableObject, SceneChangeable {
     
     
     func changeScene(scene: SceneList) {
-        self.scene = scene
+        switch scene {
+        case .MainMenu, .CombatScene:
+            self.scene = scene
+        case .FirstLevel, .SecondLevel, .ThirdLevel:
+            self.scene = scene
+            Level.scene = scene
+        }
     }
     
     func newGame() {
@@ -96,7 +104,7 @@ class SceneManagerViewModel: ObservableObject, SceneChangeable {
     }
     
     
-    func changeSceneFromOutsideSwiftUI(scene: SceneList) {
+    func changeSceneFromOutside(scene: SceneList) {
         changeScene(scene: scene)
     }
     

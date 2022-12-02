@@ -81,19 +81,17 @@ extension Enemy {
             var lookDir: AnimationDirection
             
             switch abs(angleToSee) {
-            case 46...134:
+            case 46...135:
                 lookDir = .side
-                self.worldSprite.xScale = abs(self.worldSprite.xScale)
-//                self.flipEnemy(right: true)
+                self.worldSprite.xScale = -(self.worldSprite.xScale)
             case 0...45,
                  316...360:
                 lookDir = .up
-            case 135...225:
+            case 136...225:
                 lookDir = .down
-            case 225...315:
+            case 226...315:
                 lookDir = .side
-                self.worldSprite.xScale = -(self.worldSprite.xScale)
-//                self.flipEnemy(right: false)
+                self.worldSprite.xScale = (self.worldSprite.xScale)
             default:
                 lookDir = .down
             }

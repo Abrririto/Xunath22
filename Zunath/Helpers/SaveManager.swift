@@ -28,7 +28,8 @@ class SaveManager {
             let saveModel = SaveModel(
                 level: Resources.mainCharacter.level,
                 currentExp: Resources.mainCharacter.currentExperience,
-                position: Resources.mainCharacter.position
+                position: Resources.mainCharacter.position,
+                scene: Level.scene
             )
           
             let jsonEncoder = JSONEncoder()
@@ -53,7 +54,8 @@ class SaveManager {
                 Resources.mainCharacter.level = data.level
                 Resources.mainCharacter.currentExperience = data.currentExp
                 Resources.mainCharacter.position = data.position
-                sceneManagerDelegate?.changeScene(scene: .FirstLevel)
+                sceneManagerDelegate?.changeScene(scene: data.scene)
+                Level.scene = data.scene
                
             } catch {
                 fatalError()
@@ -79,4 +81,5 @@ struct SaveModel: Codable {
     var level: Int
     var currentExp: Int
     var position: CGPoint
+    var scene: SceneList
 }

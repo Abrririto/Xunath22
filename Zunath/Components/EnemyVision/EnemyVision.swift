@@ -42,7 +42,7 @@ extension Enemy {
         sprite.fillColor = color
         sprite.name = nome
         sprite.zRotation = angle
-        sprite.zPosition = -1
+        sprite.zPosition = 10
     }
     
     /// This function enables the enemy to "see". It configure colision and vision.

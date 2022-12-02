@@ -15,6 +15,13 @@ enum AnimationSet: String {
     case combat_attack = "combat_attack"
 }
 
+enum DamageAnimationSet: String {
+    case focusPunch = "focuspunch"
+    case destruction = "destruction"
+    case illusion = "illusion"
+    case corruption = "corruption"
+}
+
 enum AnimationDirection: String {
     case up = "up"
     case down = "down"

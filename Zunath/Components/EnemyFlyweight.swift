@@ -8,25 +8,50 @@
 import Foundation
 import SpriteKit
 
-
-
-class EnemyFlyweight: AnimatedCharacterClass {
+class EnemyFlyweight: SKSpriteNode, AnimatedEnemy {
+    var atlas: SKTextureAtlas?
+    var idleUp: [SKTexture] = []
+    var idleDown: [SKTexture] = []
+    var idleSide: [SKTexture] = []
+    var idleCombat: [SKTexture] = []
+    var attackCombat: [SKTexture] = []
+    var walkUp: [SKTexture] = []
+    var walkDown: [SKTexture] = []
+    var walkSide: [SKTexture] = []
+    var dmgFocusPunch: [SKTexture] = []
+    var dmgDestruction: [SKTexture] = []
+    var dmgIllusion: [SKTexture] = []
+    var dmgCorruption: [SKTexture] = []
+    
+    var lastDirection: AnimationDirection?
+    var currentDirection: AnimationDirection?
+    
     init(type: EnemyTypes) {
-        super.init()
         switch type {
         case .commomEnemy:
-            atlas = SKTextureAtlas(named: "CommonEnemy")
+            self.atlas = SKTextureAtlas(named: "CommonEnemy")
         case .blindMage:
-            atlas = SKTextureAtlas(named: "CommonEnemy")
+            self.atlas = SKTextureAtlas(named: "CommonEnemy")
         case .knight:
-            atlas = SKTextureAtlas(named: "CommonEnemy")
+            self.atlas = SKTextureAtlas(named: "CommonEnemy")
         case .cleric:
-            atlas = SKTextureAtlas(named: "CommonEnemy")
+            self.atlas = SKTextureAtlas(named: "CommonEnemy")
         }
+        super.init(texture: nil, color: .red, size: CGSize(width: 0, height: 0))
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    func passAnimationsByReference(to enemy: Enemy) {
+//        enemy.idleUp = self.idleUp
+//        enemy.idleDown = self.idleDown
+//        enemy.idleSide = self.idleSide
+//        enemy.idleCombat = self.idleCombat
+//        enemy.attackCombat = self.attackCombat
+//        enemy.walkUp = self.walkUp
+//        enemy.walkDown = self.walkDown
+//        enemy.walkSide = self.walkSide
+//    }
 }
-

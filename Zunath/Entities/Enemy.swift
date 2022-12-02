@@ -9,6 +9,7 @@ import Foundation
 import SpriteKit
 
 class Enemy: SKNode, Collidable, KindOfEnemy, FlyweightAnimatedEnemy, CombatAttributes, CombatSkillsEnemy {
+    
     // Combat Attributes
     var maxHealth: Int = 0
     var currentHealth: Int = 0
@@ -36,10 +37,11 @@ class Enemy: SKNode, Collidable, KindOfEnemy, FlyweightAnimatedEnemy, CombatAttr
     var hasBeenDefeated: Bool = false
     
     // Animations
-    var flyweight: EnemyFlyweight?
+    var flyweight: EnemyFlyweight!
     var lastPos: CGPoint
     
     // Sprites
+    var combatEffectSprite: SKSpriteNode = SKSpriteNode(color: .black, size: CGSize(width: 200, height: 200))
     var combatSprite: SKSpriteNode = SKSpriteNode(color: .red, size: CGSize(width: 250, height: 300))
     var worldSprite: SKSpriteNode
     
@@ -54,7 +56,7 @@ class Enemy: SKNode, Collidable, KindOfEnemy, FlyweightAnimatedEnemy, CombatAttr
     var hitBox: SKPhysicsBody
     var hasDetectedPlayer: Bool
     var toMove: [SKAction] = []
-    private var vision: SKShapeNode { getEnemyVision(angle: 90, size: 250, color: .black, name: "vision", visionAngle)}
+    private var vision: SKShapeNode { getEnemyVision(angle: 90, size: 250, color: .clear, name: "vision", visionAngle)}
     var visionAngle: Double
     
     init(_ typeOfEnemy: EnemyTypes, _ flyweight: EnemyFlyweight) {
@@ -64,16 +66,21 @@ class Enemy: SKNode, Collidable, KindOfEnemy, FlyweightAnimatedEnemy, CombatAttr
         self.takenDamage = 0
         self.typeOfEnemy = typeOfEnemy
         self.percentualLife = typeOfEnemy.life
-//        self.flyweight = flyweight
+        self.flyweight = flyweight
         self.worldSprite = SKSpriteNode(texture: SKTexture(imageNamed: "common_idle_down"), color: .red, size: CGSize(width: 125, height: 125))
         self.level = 0
+//        super.init(texture: SKTexture(imageNamed: "common_idle_down"), color: .red, size: CGSize(width: 125, height: 125))
         self.lastPos = CGPoint(x: 0, y: 0)
         super.init()
         self.lastPos = self.position
         self.addChild(vision)
         self.addChild(worldSprite)
+        self.combatEffectSprite.alpha = 0
+        self.combatEffectSprite.zPosition = 1000
         enemyColisionConfigs()
         self.setScale(4)
+//        self.anchorPoint = CGPoint(x: 0.5, y: 0.3)
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -94,5 +101,6 @@ class Enemy: SKNode, Collidable, KindOfEnemy, FlyweightAnimatedEnemy, CombatAttr
     func setCombatLevel(_ level: Int) {
         self.level = level
     }
+    
     
 }
