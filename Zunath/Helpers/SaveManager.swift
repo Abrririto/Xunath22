@@ -54,7 +54,7 @@ class SaveManager {
                 Resources.mainCharacter.level = data.level
                 Resources.mainCharacter.currentExperience = data.currentExp
                 Resources.mainCharacter.position = data.position
-                sceneManagerDelegate?.changeScene(scene: data.scene)
+                sceneManagerDelegate?.changeScene(scene: .FirstLevel)
                 Level.scene = data.scene
                
             } catch {

@@ -38,7 +38,7 @@ struct MainMenuView: View {
             }
         }
         .onAppear {
-//            AudioPlayerImpl.shared.playInLoop(music: Audio.MusicFiles.menuPrincipal)
+            AudioPlayerImpl.shared.playInLoop(music: Audio.MusicFiles.menuPrincipal)
             disableContinueButton = SaveManager.shared.checkIfSaveExists()
         }
     }

@@ -39,6 +39,7 @@ extension Enemy {
     private func enemyVisionShapeConfigs(_ sprite: SKShapeNode, _ color: NSColor, _ nome: String, _ visionAngle: Double) {
         let angle = -(visionAngle * (.pi/180))
         sprite.position = CGPoint(x: 0, y: 0)
+        sprite.strokeColor = .clear
         sprite.fillColor = color
         sprite.name = nome
         sprite.zRotation = angle

@@ -58,6 +58,7 @@ class SecondLevel: SKScene, SKPhysicsContactDelegate {
             })
         })
        
+        AudioPlayerImpl.shared.play(music: Audio.MusicFiles.exploracao)
     }
     func createSavePortal(_ node: SKSpriteNode) {
         node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: node.size.width / 2, height: node.size.height / 2))
@@ -158,7 +159,7 @@ extension SecondLevel {
                         interactionWall.checkPosition(tileMap, &firstBlockPosition, &countBlocks, col: col, row: row)
                     } else if countBlocks != 0 {
                         guard let node = interactionWall.create(&interactionNumber, &firstBlockPosition, &countBlocks) else { return }
-                        self.resources.createInteractionArea(sprite: node, size: node.size, textContent: InteractionTextsLevel1.text0)
+//                        self.resources.createInteractionArea(sprite: node, size: node.size, textContent: InteractionTextsLevel1.text0)
                         self.addChild(node)
                     }
                 case .setDesignAdjust: break

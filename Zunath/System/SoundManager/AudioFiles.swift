@@ -9,8 +9,10 @@ import Foundation
 
 struct Audio {
     struct MusicFiles {
-        static let menuPrincipal = Music(filename: "menuPrincipal", type: "mp3")
-        static let button = Music(filename: "button", type: "wav")
+        static let menuPrincipal = Music(filename: "MenuPrincipal", type: "mp3")
+        static let exploracao = Music(filename: "Exploracao", type: "mp3")
+        static let exploracao2 = Music(filename: "Exploracao2", type: "mp3")
+        static let combate = Music(filename: "Combate", type: "mp3")
     }
     
     struct EffectFiles {

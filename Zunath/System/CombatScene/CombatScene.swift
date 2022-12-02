@@ -44,7 +44,9 @@ class CombatScene: SKScene {
     override func didMove(to view: SKView) {
         generateEnemies()
         organizeInScreenSprites()
-        showEveryoneHealth()    }
+        showEveryoneHealth()
+        AudioPlayerImpl.shared.play(music: Audio.MusicFiles.combate)
+    }
     
     override func keyDown(with event: NSEvent) {
 //        switch event.keyCode {

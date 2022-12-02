@@ -44,6 +44,11 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
 //        }
         self.addChild(resources)
         initializeEnemies()
+//        AudioPlayerImpl.shared.play(music: Audio.MusicFiles.exploracao)
+    }
+    
+    override func didMove(to view: SKView) {
+        AudioPlayerImpl.shared.play(music: Audio.MusicFiles.exploracao)
     }
     
     func createLadder(_ node: SKSpriteNode) {
@@ -170,7 +175,7 @@ extension FirstLevel {
                         interactionWall.checkPosition(tileMap, &firstBlockPosition, &countBlocks, col: col, row: row)
                     } else if countBlocks != 0 {
                         guard let node = interactionWall.create(&interactionNumber, &firstBlockPosition, &countBlocks) else { return }
-                        self.resources.createInteractionArea(sprite: node, size: node.size, textContent: InteractionTextsLevel1.text0)
+//                        self.resources.createInteractionArea(sprite: node, size: node.size, textContent: InteractionTextsLevel1.text0)
                         self.addChild(node)
                     }
                 case .setDesignAdjust: break
