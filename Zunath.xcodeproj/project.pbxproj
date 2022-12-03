@@ -27,7 +27,6 @@
 		5FC54381293994DA00168F66 /* AnimatedEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC54380293994DA00168F66 /* AnimatedEnemy.swift */; };
 		5FFD175F2938171900EB0F34 /* ZunathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD175E2938171900EB0F34 /* ZunathApp.swift */; };
 		5FFD17612938171900EB0F34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD17602938171900EB0F34 /* ContentView.swift */; };
-		5FFD17632938171C00EB0F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD17622938171C00EB0F34 /* Assets.xcassets */; };
 		5FFD17662938171C00EB0F34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD17652938171C00EB0F34 /* Preview Assets.xcassets */; };
 		5FFD17712938171C00EB0F34 /* ZunathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD17702938171C00EB0F34 /* ZunathTests.swift */; };
 		5FFD177B2938171C00EB0F34 /* ZunathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD177A2938171C00EB0F34 /* ZunathUITests.swift */; };
@@ -37,8 +36,6 @@
 		5FFD185429391BFB00EB0F34 /* MainCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD180A29391BFB00EB0F34 /* MainCharacter.swift */; };
 		5FFD185529391BFB00EB0F34 /* MainCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD180B29391BFB00EB0F34 /* MainCamera.swift */; };
 		5FFD185629391BFB00EB0F34 /* AnimatedCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD180D29391BFB00EB0F34 /* AnimatedCharacter.swift */; };
-		5FFD185729391BFB00EB0F34 /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD180E29391BFB00EB0F34 /* Interactable.swift */; };
-		5FFD185829391BFB00EB0F34 /* InteractionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181029391BFB00EB0F34 /* InteractionArea.swift */; };
 		5FFD185929391BFB00EB0F34 /* PlayerControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181129391BFB00EB0F34 /* PlayerControllable.swift */; };
 		5FFD185A29391BFB00EB0F34 /* CombatSkillsPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181229391BFB00EB0F34 /* CombatSkillsPlayer.swift */; };
 		5FFD185B29391BFB00EB0F34 /* CombatSkillsEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181329391BFB00EB0F34 /* CombatSkillsEnemy.swift */; };
@@ -56,7 +53,6 @@
 		5FFD186829391BFB00EB0F34 /* Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD182329391BFB00EB0F34 /* Collision.swift */; };
 		5FFD186929391BFB00EB0F34 /* Keybinds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD182429391BFB00EB0F34 /* Keybinds.swift */; };
 		5FFD186A29391BFB00EB0F34 /* SaveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD182529391BFB00EB0F34 /* SaveManager.swift */; };
-		5FFD186B29391BFB00EB0F34 /* AttributedStringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD182629391BFB00EB0F34 /* AttributedStringGenerator.swift */; };
 		5FFD186C29391BFB00EB0F34 /* Level1.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD182829391BFB00EB0F34 /* Level1.strings */; };
 		5FFD186D29391BFB00EB0F34 /* BitMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD182929391BFB00EB0F34 /* BitMasks.swift */; };
 		5FFD186E29391BFB00EB0F34 /* MainCharModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD182B29391BFB00EB0F34 /* MainCharModel.swift */; };
@@ -70,15 +66,15 @@
 		5FFD187629391BFB00EB0F34 /* AudioPlayerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD183929391BFB00EB0F34 /* AudioPlayerImplementation.swift */; };
 		5FFD187729391BFB00EB0F34 /* AudioFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD183A29391BFB00EB0F34 /* AudioFiles.swift */; };
 		5FFD187829391BFB00EB0F34 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD183C29391BFB00EB0F34 /* MainMenuView.swift */; };
-		5FFD187929391BFB00EB0F34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD183E29391BFB00EB0F34 /* Preview Assets.xcassets */; };
-		5FFD187A29391BFB00EB0F34 /* FirstLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD184129391BFB00EB0F34 /* FirstLevel.sks */; };
-		5FFD187B29391BFB00EB0F34 /* SecondLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD184229391BFB00EB0F34 /* SecondLevel.sks */; };
 		5FFD187C29391BFB00EB0F34 /* ThirdLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD184329391BFB00EB0F34 /* ThirdLevel.sks */; };
 		5FFD187D29391BFB00EB0F34 /* Ground.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD184529391BFB00EB0F34 /* Ground.sks */; };
 		5FFD187E29391BFB00EB0F34 /* Walls.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD184629391BFB00EB0F34 /* Walls.sks */; };
 		5FFD187F29391BFB00EB0F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD184729391BFB00EB0F34 /* Assets.xcassets */; };
 		5FFD188529391BFB00EB0F34 /* Alagard.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FFD185129391BFB00EB0F34 /* Alagard.ttf */; };
-		5FFD188729391C6D00EB0F34 /* Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD188629391C6D00EB0F34 /* Collision.swift */; };
+		801FCC36293BE0030079E6F7 /* FirstLevelWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801FCC35293BE0030079E6F7 /* FirstLevelWords.swift */; };
+		801FCC38293BE0510079E6F7 /* TextWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 801FCC37293BE0510079E6F7 /* TextWall.sks */; };
+		801FCC3A293BE0930079E6F7 /* FirstLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 801FCC39293BE0930079E6F7 /* FirstLevel.sks */; };
+		801FCC3C293BE0B20079E6F7 /* SecondLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = 801FCC3B293BE0B20079E6F7 /* SecondLevel.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +116,6 @@
 		5FFD175B2938171900EB0F34 /* Zunath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zunath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFD175E2938171900EB0F34 /* ZunathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZunathApp.swift; sourceTree = "<group>"; };
 		5FFD17602938171900EB0F34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5FFD17622938171C00EB0F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FFD17652938171C00EB0F34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5FFD17672938171C00EB0F34 /* Zunath.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zunath.entitlements; sourceTree = "<group>"; };
 		5FFD176C2938171C00EB0F34 /* ZunathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZunathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,8 +128,6 @@
 		5FFD180A29391BFB00EB0F34 /* MainCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCharacter.swift; sourceTree = "<group>"; };
 		5FFD180B29391BFB00EB0F34 /* MainCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCamera.swift; sourceTree = "<group>"; };
 		5FFD180D29391BFB00EB0F34 /* AnimatedCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedCharacter.swift; sourceTree = "<group>"; };
-		5FFD180E29391BFB00EB0F34 /* Interactable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
-		5FFD181029391BFB00EB0F34 /* InteractionArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionArea.swift; sourceTree = "<group>"; };
 		5FFD181129391BFB00EB0F34 /* PlayerControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControllable.swift; sourceTree = "<group>"; };
 		5FFD181229391BFB00EB0F34 /* CombatSkillsPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatSkillsPlayer.swift; sourceTree = "<group>"; };
 		5FFD181329391BFB00EB0F34 /* CombatSkillsEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatSkillsEnemy.swift; sourceTree = "<group>"; };
@@ -152,7 +145,6 @@
 		5FFD182329391BFB00EB0F34 /* Collision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collision.swift; sourceTree = "<group>"; };
 		5FFD182429391BFB00EB0F34 /* Keybinds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keybinds.swift; sourceTree = "<group>"; };
 		5FFD182529391BFB00EB0F34 /* SaveManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveManager.swift; sourceTree = "<group>"; };
-		5FFD182629391BFB00EB0F34 /* AttributedStringGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringGenerator.swift; sourceTree = "<group>"; };
 		5FFD182829391BFB00EB0F34 /* Level1.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Level1.strings; sourceTree = "<group>"; };
 		5FFD182929391BFB00EB0F34 /* BitMasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitMasks.swift; sourceTree = "<group>"; };
 		5FFD182B29391BFB00EB0F34 /* MainCharModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCharModel.swift; sourceTree = "<group>"; };
@@ -166,15 +158,15 @@
 		5FFD183929391BFB00EB0F34 /* AudioPlayerImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerImplementation.swift; sourceTree = "<group>"; };
 		5FFD183A29391BFB00EB0F34 /* AudioFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioFiles.swift; sourceTree = "<group>"; };
 		5FFD183C29391BFB00EB0F34 /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
-		5FFD183E29391BFB00EB0F34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5FFD184129391BFB00EB0F34 /* FirstLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FirstLevel.sks; sourceTree = "<group>"; };
-		5FFD184229391BFB00EB0F34 /* SecondLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SecondLevel.sks; sourceTree = "<group>"; };
 		5FFD184329391BFB00EB0F34 /* ThirdLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ThirdLevel.sks; sourceTree = "<group>"; };
 		5FFD184529391BFB00EB0F34 /* Ground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ground.sks; sourceTree = "<group>"; };
 		5FFD184629391BFB00EB0F34 /* Walls.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Walls.sks; sourceTree = "<group>"; };
 		5FFD184729391BFB00EB0F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FFD185129391BFB00EB0F34 /* Alagard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alagard.ttf; sourceTree = "<group>"; };
-		5FFD188629391C6D00EB0F34 /* Collision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collision.swift; sourceTree = "<group>"; };
+		801FCC35293BE0030079E6F7 /* FirstLevelWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelWords.swift; sourceTree = "<group>"; };
+		801FCC37293BE0510079E6F7 /* TextWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TextWall.sks; sourceTree = "<group>"; };
+		801FCC39293BE0930079E6F7 /* FirstLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FirstLevel.sks; sourceTree = "<group>"; };
+		801FCC3B293BE0B20079E6F7 /* SecondLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SecondLevel.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,12 +263,10 @@
 				5FFD180729391BFB00EB0F34 /* Entities */,
 				5FFD181E29391BFB00EB0F34 /* Helpers */,
 				5FFD182A29391BFB00EB0F34 /* Model */,
-				5FFD183D29391BFB00EB0F34 /* Preview Content */,
 				5FFD183F29391BFB00EB0F34 /* Resources */,
 				5FFD182C29391BFB00EB0F34 /* System */,
 				5FFD175E2938171900EB0F34 /* ZunathApp.swift */,
 				5FFD17602938171900EB0F34 /* ContentView.swift */,
-				5FFD17622938171C00EB0F34 /* Assets.xcassets */,
 				5FFD17672938171C00EB0F34 /* Zunath.entitlements */,
 				5FFD17642938171C00EB0F34 /* Preview Content */,
 			);
@@ -327,8 +317,6 @@
 				5FC5437A29398BE000168F66 /* CombatButtonSUI.swift */,
 				5FC5437829398B9B00168F66 /* CombatButton.swift */,
 				5FFD180D29391BFB00EB0F34 /* AnimatedCharacter.swift */,
-				5FFD180E29391BFB00EB0F34 /* Interactable.swift */,
-				5FFD180F29391BFB00EB0F34 /* Wall */,
 				5FFD181129391BFB00EB0F34 /* PlayerControllable.swift */,
 				5FFD181229391BFB00EB0F34 /* CombatSkillsPlayer.swift */,
 				5FFD181329391BFB00EB0F34 /* CombatSkillsEnemy.swift */,
@@ -342,14 +330,6 @@
 				5FFD181D29391BFB00EB0F34 /* FlyweightAnimatedEnemy.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		5FFD180F29391BFB00EB0F34 /* Wall */ = {
-			isa = PBXGroup;
-			children = (
-				5FFD181029391BFB00EB0F34 /* InteractionArea.swift */,
-			);
-			path = Wall;
 			sourceTree = "<group>";
 		};
 		5FFD181629391BFB00EB0F34 /* EnemyVision */ = {
@@ -371,14 +351,12 @@
 		5FFD181E29391BFB00EB0F34 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				5FFD188629391C6D00EB0F34 /* Collision.swift */,
 				5FFD181F29391BFB00EB0F34 /* AnimationSet.swift */,
 				5FFD182129391BFB00EB0F34 /* GameResources.swift */,
 				5FFD182229391BFB00EB0F34 /* StaticScreenSize.swift */,
 				5FFD182329391BFB00EB0F34 /* Collision.swift */,
 				5FFD182429391BFB00EB0F34 /* Keybinds.swift */,
 				5FFD182529391BFB00EB0F34 /* SaveManager.swift */,
-				5FFD182629391BFB00EB0F34 /* AttributedStringGenerator.swift */,
 				5FFD182729391BFB00EB0F34 /* Localizable */,
 				5FFD182929391BFB00EB0F34 /* BitMasks.swift */,
 				5FC5437C29398C4800168F66 /* StaticActualScene.swift */,
@@ -438,6 +416,7 @@
 			children = (
 				5FFD183229391BFB00EB0F34 /* FirstLevel.swift */,
 				5FFD183329391BFB00EB0F34 /* FirstLevelView.swift */,
+				801FCC35293BE0030079E6F7 /* FirstLevelWords.swift */,
 			);
 			path = FirstLevel;
 			sourceTree = "<group>";
@@ -469,14 +448,6 @@
 			path = MainMenu;
 			sourceTree = "<group>";
 		};
-		5FFD183D29391BFB00EB0F34 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				5FFD183E29391BFB00EB0F34 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		5FFD183F29391BFB00EB0F34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,8 +463,8 @@
 		5FFD184029391BFB00EB0F34 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				5FFD184129391BFB00EB0F34 /* FirstLevel.sks */,
-				5FFD184229391BFB00EB0F34 /* SecondLevel.sks */,
+				801FCC39293BE0930079E6F7 /* FirstLevel.sks */,
+				801FCC3B293BE0B20079E6F7 /* SecondLevel.sks */,
 				5FFD184329391BFB00EB0F34 /* ThirdLevel.sks */,
 			);
 			path = Maps;
@@ -503,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				5FFD184529391BFB00EB0F34 /* Ground.sks */,
+				801FCC37293BE0510079E6F7 /* TextWall.sks */,
 				5FFD184629391BFB00EB0F34 /* Walls.sks */,
 			);
 			path = TileMaps;
@@ -620,23 +592,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801FCC38293BE0510079E6F7 /* TextWall.sks in Resources */,
 				5FFD187E29391BFB00EB0F34 /* Walls.sks in Resources */,
 				5FFD187D29391BFB00EB0F34 /* Ground.sks in Resources */,
 				5F15B7EE2939AB77009D1F62 /* MenuPrincipal.mp3 in Resources */,
+				801FCC3C293BE0B20079E6F7 /* SecondLevel.sks in Resources */,
 				5F15B7F22939AB77009D1F62 /* ouchie.wav in Resources */,
 				5F15B7F12939AB77009D1F62 /* Exploracao.mp3 in Resources */,
 				5F15B7F42939AB77009D1F62 /* capitalismo.wav in Resources */,
-				5FFD187A29391BFB00EB0F34 /* FirstLevel.sks in Resources */,
 				5FFD188529391BFB00EB0F34 /* Alagard.ttf in Resources */,
 				5F15B7F32939AB77009D1F62 /* button.wav in Resources */,
 				5FFD187C29391BFB00EB0F34 /* ThirdLevel.sks in Resources */,
 				5FFD187F29391BFB00EB0F34 /* Assets.xcassets in Resources */,
-				5FFD187929391BFB00EB0F34 /* Preview Assets.xcassets in Resources */,
-				5FFD187B29391BFB00EB0F34 /* SecondLevel.sks in Resources */,
+				801FCC3A293BE0930079E6F7 /* FirstLevel.sks in Resources */,
 				5F15B7F02939AB77009D1F62 /* Exploracao2.mp3 in Resources */,
 				5FFD186C29391BFB00EB0F34 /* Level1.strings in Resources */,
 				5FFD17662938171C00EB0F34 /* Preview Assets.xcassets in Resources */,
-				5FFD17632938171C00EB0F34 /* Assets.xcassets in Resources */,
 				5F15B7F52939AB77009D1F62 /* mori.mp3 in Resources */,
 				5F15B7EF2939AB77009D1F62 /* Combate.mp3 in Resources */,
 			);
@@ -663,7 +634,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FFD186B29391BFB00EB0F34 /* AttributedStringGenerator.swift in Sources */,
 				5FC5437329398A3500168F66 /* CombatScene.swift in Sources */,
 				5FC5437729398A5A00168F66 /* CombatViewModel.swift in Sources */,
 				5F15B7E229399D31009D1F62 /* LifeBar.swift in Sources */,
@@ -680,14 +650,13 @@
 				5FFD187529391BFB00EB0F34 /* AVAudioPlayer+Extension.swift in Sources */,
 				5FFD185F29391BFB00EB0F34 /* Collidable.swift in Sources */,
 				5FFD187129391BFB00EB0F34 /* FirstLevel.swift in Sources */,
-				5FFD185729391BFB00EB0F34 /* Interactable.swift in Sources */,
 				5FFD187729391BFB00EB0F34 /* AudioFiles.swift in Sources */,
 				5FFD186229391BFB00EB0F34 /* EnemyMovevement.swift in Sources */,
 				5FFD185C29391BFB00EB0F34 /* TextBox.swift in Sources */,
 				5FFD186429391BFB00EB0F34 /* AnimationSet.swift in Sources */,
+				801FCC36293BE0030079E6F7 /* FirstLevelWords.swift in Sources */,
 				5FFD187329391BFB00EB0F34 /* SceneManager.swift in Sources */,
 				5FC5437F2939915900168F66 /* StaticEnemyThatSeen.swift in Sources */,
-				5FFD188729391C6D00EB0F34 /* Collision.swift in Sources */,
 				5FFD187629391BFB00EB0F34 /* AudioPlayerImplementation.swift in Sources */,
 				5FFD17612938171900EB0F34 /* ContentView.swift in Sources */,
 				5FFD187429391BFB00EB0F34 /* SoundFile.swift in Sources */,
@@ -704,7 +673,6 @@
 				5FC5437B29398BE000168F66 /* CombatButtonSUI.swift in Sources */,
 				5FFD186329391BFB00EB0F34 /* FlyweightAnimatedEnemy.swift in Sources */,
 				5FFD186029391BFB00EB0F34 /* CombatAttributes.swift in Sources */,
-				5FFD185829391BFB00EB0F34 /* InteractionArea.swift in Sources */,
 				5FFD186729391BFB00EB0F34 /* StaticScreenSize.swift in Sources */,
 				5FC54381293994DA00168F66 /* AnimatedEnemy.swift in Sources */,
 				5FFD186F29391BFB00EB0F34 /* SecondLevel.swift in Sources */,

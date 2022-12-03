@@ -43,15 +43,4 @@ class EnemyFlyweight: SKSpriteNode, AnimatedEnemy {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    func passAnimationsByReference(to enemy: Enemy) {
-//        enemy.idleUp = self.idleUp
-//        enemy.idleDown = self.idleDown
-//        enemy.idleSide = self.idleSide
-//        enemy.idleCombat = self.idleCombat
-//        enemy.attackCombat = self.attackCombat
-//        enemy.walkUp = self.walkUp
-//        enemy.walkDown = self.walkDown
-//        enemy.walkSide = self.walkSide
-//    }
 }

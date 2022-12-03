@@ -11,27 +11,15 @@ import SpriteKit
 class GameResources: SKNode {
     var commonEnemy = EnemyFlyweight(type: .commomEnemy)
     var enemies: [Enemy] = []
-//    var coins: [Coin] = []
-    var interactionAreas: [InteractionArea] = []
     
     override init() {
         super.init()
-        
         commonEnemy.initializeAnimations()
         commonEnemy.initializeEnemyAnimations()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
- 
-    
-    func createInteractionArea(sprite: SKSpriteNode, size: CGSize, textContent: [String]) {
-        let area = InteractionArea(node: sprite, size: size, textContent: textContent)
-        area.name = "interact_\(interactionAreas.count)"
-        interactionAreas.append(area)
-        self.addChild(area)
-        print("\(String(describing: area.name)) was created, linked to \(String(describing: sprite.name))")
     }
     
     func createEnemy(coordA: CGPoint, typeOfEnemy: EnemyTypes) {

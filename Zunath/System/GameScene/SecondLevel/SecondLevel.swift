@@ -11,9 +11,6 @@ import SpriteKit
 class SecondLevel: SKScene, SKPhysicsContactDelegate {
     var character: MainCharacter = Resources.mainCharacter
     var webcam = MainCamera()
-    
-    //    var enemies = [Enemy]()
-    //    var interactionAreas = [InteractionArea]()
 
     var resources: GameResources = GameResources()
     
@@ -90,13 +87,6 @@ class SecondLevel: SKScene, SKPhysicsContactDelegate {
                     return
                 }
                 
-//                if !webcam.textBoxHasContent {
-//                    guard let interaction = resources.interactionAreas.first(where: {$0.isInsideArea == true}) else { return }
-//                    self.gameIsActive = interaction.interact()
-//                } else {
-//                    self.gameIsActive = webcam.displayTextBox()
-//                }
-                
             case WalkKeybinds.UP.rawValue, WalkKeybinds.ALTERNATIVEUP.rawValue,
                 WalkKeybinds.DOWN.rawValue, WalkKeybinds.ALTERNATIVEDOWN.rawValue,
                 WalkKeybinds.LEFT.rawValue, WalkKeybinds.ALTERNATIVELEFT.rawValue,
@@ -159,7 +149,6 @@ extension SecondLevel {
                         interactionWall.checkPosition(tileMap, &firstBlockPosition, &countBlocks, col: col, row: row)
                     } else if countBlocks != 0 {
                         guard let node = interactionWall.create(&interactionNumber, &firstBlockPosition, &countBlocks) else { return }
-//                        self.resources.createInteractionArea(sprite: node, size: node.size, textContent: InteractionTextsLevel1.text0)
                         self.addChild(node)
                     }
                 case .setDesignAdjust: break

@@ -11,23 +11,16 @@ import Foundation
 import SpriteKit
 
 class MainCamera: SKCameraNode {
-    private var hud: [String: SKNode] = [:]
-
     var textBoxHasContent: Bool = false
+    
     var isSaveMessageShowing = false
     var lblSaveGame = SKLabelNode()
     
+    var isReadingTheWallShowing = false
+    var lblReadWall = SKLabelNode()
+    
     override init() {
         super.init()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(resolutionWasUpdated(notification:)),
-                                               name: NSApplication.didChangeScreenParametersNotification,
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.textBoxSetup(notification:)),
-                                               name: Notification.Name("displayText"),
-                                               object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,40 +28,35 @@ class MainCamera: SKCameraNode {
     }
     
     func setOnMap(_ webcam: MainCamera) -> MainCamera {
-        webcam.createInteraction()
         webcam.createTextBox()
-        webcam.setScale(4.5)
+        webcam.setScale(3.5)
         return webcam
     }
     
-    func createInteraction() {
-        let interact = SKLabelNode(text: "Press Z or M to interact")
-        let frameSize = 100
-        interact.name = "hud_interact"
-        interact.verticalAlignmentMode = .center
-        interact.horizontalAlignmentMode = .center
-        interact.position = CGPoint(x: 0, y: -(frameSize / 3) + 30) // -275
-        interact.zPosition = 10
-        interact.isHidden = true
-        self.hud["hud_interact"] = interact
-        self.addChild(interact)
-    }
-    
     func createTextBox() {
-        let box = TextBox(texture: nil, color: .black, size: CGSize(width: 750, height: 200))
+        let box = SKShapeNode(rectOf: CGSize(width: 750, height: 200))
+        box.fillColor = .black
         box.position.y = -200
         box.zPosition = 10
         box.name = "hud_textbox"
         box.isHidden = true
-        self.hud["hud_textbox"] = box
+        box.addChild(zORmToContinue())
         self.addChild(box)
+    }
+    
+    private func zORmToContinue() -> SKLabelNode {
+        let label = SKLabelNode(fontNamed: "Alagard")
+        label.text = "Press Z or M to continue."
+        label.color = .white
+        label.fontSize = 16
+        label.position = CGPoint(x: 270, y: -90)
+        return label
     }
     
     func interactSaveMessage() {
         lblSaveGame = SKLabelNode(fontNamed: "Alagard")
         lblSaveGame.text = "Press Z to Save Game!"
         if !isSaveMessageShowing {
-            
             let frameSize = 1024
             self.addChild(lblSaveGame)
             lblSaveGame.position = CGPoint(x: 0, y: -(frameSize / 3) + 30) // -275
@@ -81,40 +69,19 @@ class MainCamera: SKCameraNode {
         }
     }
     
-    @objc func resolutionWasUpdated(notification: Notification) {
-        print("Resolution was altered")
-    }
-    
-    func fetchHudAsset(_ name: String) -> SKNode? {
-        return hud[name]
-    }
-    
-    func toggleInteractionHUDNotification(contact: Bool) {
-        guard let asset = fetchHudAsset("hud_interact") else { return }
-        contact ? (asset.isHidden = false) : (asset.isHidden = true)
-    }
-    
-    /// Gets the strings of text from the Interactable and gives it to the Text Box
-    /// - Parameter notification: Notification containing the array of strings to be displayed.
-    @objc func textBoxSetup(notification: Notification) {
-        if let strings = notification.userInfo?["strings"] as? [String], let box = hud["hud_textbox"] as? TextBox {
-            box.addTextToBeDisplayed(text: strings)
-            self.textBoxHasContent = true
-            self.displayTextBox()
-        }
-    }
-    
-    /// If the textBox has content to display, it runs displayNextString
-    /// - Returns: Game's active state. If there is still content to be displayed, returns false to keep the game logic temporarily disabled.
-    func displayTextBox() -> Bool {
-        if let box = hud["hud_textbox"] as? TextBox {
-            self.textBoxHasContent = box.displayNextString()
-        }
-        
-        if textBoxHasContent {
-            return false
+    func interactWallMessage() {
+        lblReadWall = SKLabelNode(fontNamed: "Alagard")
+        lblReadWall.text = "Press Z or M to read the wall."
+        if !isReadingTheWallShowing {
+            let frameSize = 1024
+            self.addChild(lblReadWall)
+            lblReadWall.position = CGPoint(x: 0, y: -(frameSize / 3) + 30) // -275
+            lblReadWall.zPosition = 100
+            lblReadWall.name = "lblReadWall"
+            isReadingTheWallShowing = true
         } else {
-            return true
+            self.childNode(withName: "lblReadWall")?.removeFromParent()
+            isReadingTheWallShowing = false
         }
     }
 }

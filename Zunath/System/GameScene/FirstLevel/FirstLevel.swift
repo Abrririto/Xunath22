@@ -10,11 +10,11 @@ import SpriteKit
 
 class FirstLevel: SKScene, SKPhysicsContactDelegate {
     var character: MainCharacter = Resources.mainCharacter
-    var webcam = MainCamera()
+    var webcam = Resources.camera
     var gameSceneDelegate: GameSceneProtocol?
-    //    var enemies = [Enemy]()
-    //    var interactionAreas = [InteractionArea]()
-
+    private var textControl: [Int:String] = [:]
+    private var intermediateTextControl: Int = 0
+    
     var resources: GameResources = GameResources()
     
     override func sceneDidLoad() {
@@ -29,22 +29,19 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         setCollision(self.childNode(withName: "ColisionObjects") as! SKTileMapNode, configType: .setCollision)
         setCollision(self.childNode(withName: "SpecialColisionObjects") as! SKTileMapNode, configType: .setCollision)
         setCollision(self.childNode(withName: "InteractableWall") as! SKTileMapNode, configType: .setInteraction)
-//        if let designAdjust = self.childNode(withName: "DesignAdjusts") as? SKTileMapNode {
-//            setDesignAdjusts(designAdjust)
-//        }
+        
         if let node = self.childNode(withName: "SavePortal") as? SKSpriteNode {
             createSavePortal(node)
         }
-        
         if let node = self.childNode(withName: "Ladder") as? SKSpriteNode {
             createLadder(node)
         }
-//        if let node = self.childNode(withName: "SavePortal2") as? SKSpriteNode {
-//            createSavePortal(node)
-//        }
+        //        if let node = self.childNode(withName: "SavePortal2") as? SKSpriteNode {
+        //            createSavePortal(node)
+        //        }
         self.addChild(resources)
         initializeEnemies()
-//        AudioPlayerImpl.shared.play(music: Audio.MusicFiles.exploracao)
+        //        AudioPlayerImpl.shared.play(music: Audio.MusicFiles.exploracao)
     }
     
     override func didMove(to view: SKView) {
@@ -64,7 +61,7 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         node.physicsBody?.contactTestBitMask = BitMasks.player.rawValue
         node.physicsBody?.categoryBitMask = BitMasks.savePortal.rawValue
     }
-
+    
     override func update(_ currentTime: TimeInterval) {
         webcam.run(.move(to: character.position, duration: 0.25))
         character.updatePosition()
@@ -78,30 +75,50 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func readText() -> SKLabelNode {
+        let label = SKLabelNode(fontNamed: "Alagard")
+        label.text = textControl[self.intermediateTextControl]
+        label.color = .white
+        label.preferredMaxLayoutWidth = 735
+        label.numberOfLines = 4
+        label.horizontalAlignmentMode = .left
+        label.verticalAlignmentMode = .top
+        label.position = CGPoint(x: -365, y: 75)
+        label.name = "text"
+        return label
+    }
+    
     override func keyUp(with event: NSEvent) {
         switch event.keyCode {
-            case InteractKeybinds.INTERACT.rawValue,
-                InteractKeybinds.INTERACT.rawValue:
-                if webcam.isSaveMessageShowing {
-                    SaveManager.shared.saveGame()
-                    print("Saving Game")
-                    return
+        case InteractKeybinds.INTERACT.rawValue,
+            InteractKeybinds.ALTERNATIVEINTERACT.rawValue:
+            if webcam.isSaveMessageShowing {
+                SaveManager.shared.saveGame()
+                return
+            }
+            if webcam.isReadingTheWallShowing && !self.isPaused {
+                webcam.childNode(withName: "hud_textbox")?.isHidden = false
+                webcam.lblReadWall.isHidden = true
+                self.isPaused = true
+                for text in textControl {
+                    if text.key == intermediateTextControl {
+                        webcam.childNode(withName: "hud_textbox")?.addChild(readText())
+                    }
                 }
-                
-//                if !webcam.textBoxHasContent {
-//                    guard let interaction = resources.interactionAreas.first(where: {$0.isInsideArea == true}) else { return }
-//                    self.gameIsActive = interaction.interact()
-//                } else {
-//                    self.gameIsActive = webcam.displayTextBox()
-//                }
-                
-            case WalkKeybinds.UP.rawValue, WalkKeybinds.ALTERNATIVEUP.rawValue,
-                WalkKeybinds.DOWN.rawValue, WalkKeybinds.ALTERNATIVEDOWN.rawValue,
-                WalkKeybinds.LEFT.rawValue, WalkKeybinds.ALTERNATIVELEFT.rawValue,
-                WalkKeybinds.RIGHT.rawValue, WalkKeybinds.ALTERNATIVERIGHT.rawValue:
-                self.character.stopMoving(event.keyCode)
-            default: print("Movimento não registrado.")
-
+                return
+            } else if webcam.isReadingTheWallShowing && self.isPaused {
+                self.isPaused = false
+                webcam.childNode(withName: "hud_textbox")?.isHidden = true
+                webcam.childNode(withName: "hud_textbox")?.childNode(withName: "text")?.removeFromParent()
+            }
+            
+        case WalkKeybinds.UP.rawValue, WalkKeybinds.ALTERNATIVEUP.rawValue,
+            WalkKeybinds.DOWN.rawValue, WalkKeybinds.ALTERNATIVEDOWN.rawValue,
+            WalkKeybinds.LEFT.rawValue, WalkKeybinds.ALTERNATIVELEFT.rawValue,
+            WalkKeybinds.RIGHT.rawValue, WalkKeybinds.ALTERNATIVERIGHT.rawValue:
+            self.character.stopMoving(event.keyCode)
+        default: print("Movimento não registrado.")
+            
         }
         self.character.makeTheCorrectAnimationRun(event: event)
         self.character.isStoppedAnimation()
@@ -117,7 +134,6 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
         } else {
             checkEnemyVision(contact: contact)
         }
-        
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
@@ -129,9 +145,9 @@ class FirstLevel: SKScene, SKPhysicsContactDelegate {
     func checkEnemyVision(contact: SKPhysicsContact) {
         if contact.bodyA.categoryBitMask == BitMasks.enemyVision.rawValue {
             guard let bodyA = contact.bodyA.node?.parent as? Enemy else { return }
-//            character.removeFromParent()
-//            character.clearMovementBuffer()
-//            gameSceneDelegate?.changeScene(scene: .SecondLevel)
+            //            character.removeFromParent()
+            //            character.clearMovementBuffer()
+            //            gameSceneDelegate?.changeScene(scene: .SecondLevel)
             EnemyThatSeenCharEnum.lastSeenEnemy = bodyA
             character.clearMovementBuffer()
             gameSceneDelegate?.changeScene(scene: .CombatScene)
@@ -163,8 +179,8 @@ extension FirstLevel {
         var interactionNumber = 1
         var firstBlockPosition: CGPoint?
         var countBlocks: CGFloat = 0
-        for col in 0..<tileMap.numberOfColumns {
-            for row in 0..<tileMap.numberOfRows {
+        for row in 0..<tileMap.numberOfRows {
+            for col in 0..<tileMap.numberOfColumns {
                 switch configType {
                 case .setCollision:
                     if tileMap.tileDefinition(atColumn: col, row: row) != nil {
@@ -175,7 +191,9 @@ extension FirstLevel {
                         interactionWall.checkPosition(tileMap, &firstBlockPosition, &countBlocks, col: col, row: row)
                     } else if countBlocks != 0 {
                         guard let node = interactionWall.create(&interactionNumber, &firstBlockPosition, &countBlocks) else { return }
-//                        self.resources.createInteractionArea(sprite: node, size: node.size, textContent: InteractionTextsLevel1.text0)
+                        let count = textControl.count
+                        textControl[node.hash] = FirstLevelWords().AllTexts[count]
+                        node.name = "\(node.hash)"
                         self.addChild(node)
                     }
                 case .setDesignAdjust: break
@@ -195,7 +213,9 @@ extension FirstLevel {
             character.zPosition = 4
         }
         if contact.bodyB.categoryBitMask == BitMasks.interactable.rawValue {
-            print("Zona de interação")
+            webcam.interactWallMessage()
+            guard let string = contact.bodyB.node?.name else { return }
+            intermediateTextControl = Int(string) ?? 0
         }
     }
     
@@ -250,7 +270,7 @@ extension FirstLevel {
         resources.enemies[6].lookToAngle(angleToSee: -315, timeTurning: 0.7)
         resources.enemies[6].moveToX(xPos: -4640, timeWalking: 10)
         resources.enemies[6].run(.repeatForever(.sequence(resources.enemies[6].toMove)), withKey: "MovementRoutine")
-
+        
         resources.createEnemy(coordA: CGPoint(x: 1520, y: -1440), typeOfEnemy: .commomEnemy)
         resources.enemies[7].lookToAngle(angleToSee: -315, timeTurning: 0.7)
         resources.enemies[7].moveToX(xPos: 720, timeWalking: 6)
