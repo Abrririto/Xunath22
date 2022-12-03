@@ -39,7 +39,6 @@
 		5FFD185929391BFB00EB0F34 /* PlayerControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181129391BFB00EB0F34 /* PlayerControllable.swift */; };
 		5FFD185A29391BFB00EB0F34 /* CombatSkillsPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181229391BFB00EB0F34 /* CombatSkillsPlayer.swift */; };
 		5FFD185B29391BFB00EB0F34 /* CombatSkillsEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181329391BFB00EB0F34 /* CombatSkillsEnemy.swift */; };
-		5FFD185C29391BFB00EB0F34 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181429391BFB00EB0F34 /* TextBox.swift */; };
 		5FFD185D29391BFB00EB0F34 /* EnemyFlyweight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181529391BFB00EB0F34 /* EnemyFlyweight.swift */; };
 		5FFD185E29391BFB00EB0F34 /* EnemyVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181729391BFB00EB0F34 /* EnemyVision.swift */; };
 		5FFD185F29391BFB00EB0F34 /* Collidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD181829391BFB00EB0F34 /* Collidable.swift */; };
@@ -131,7 +130,6 @@
 		5FFD181129391BFB00EB0F34 /* PlayerControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControllable.swift; sourceTree = "<group>"; };
 		5FFD181229391BFB00EB0F34 /* CombatSkillsPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatSkillsPlayer.swift; sourceTree = "<group>"; };
 		5FFD181329391BFB00EB0F34 /* CombatSkillsEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatSkillsEnemy.swift; sourceTree = "<group>"; };
-		5FFD181429391BFB00EB0F34 /* TextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		5FFD181529391BFB00EB0F34 /* EnemyFlyweight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyFlyweight.swift; sourceTree = "<group>"; };
 		5FFD181729391BFB00EB0F34 /* EnemyVision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyVision.swift; sourceTree = "<group>"; };
 		5FFD181829391BFB00EB0F34 /* Collidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collidable.swift; sourceTree = "<group>"; };
@@ -320,7 +318,6 @@
 				5FFD181129391BFB00EB0F34 /* PlayerControllable.swift */,
 				5FFD181229391BFB00EB0F34 /* CombatSkillsPlayer.swift */,
 				5FFD181329391BFB00EB0F34 /* CombatSkillsEnemy.swift */,
-				5FFD181429391BFB00EB0F34 /* TextBox.swift */,
 				5FFD181529391BFB00EB0F34 /* EnemyFlyweight.swift */,
 				5FFD181629391BFB00EB0F34 /* EnemyVision */,
 				5FFD181829391BFB00EB0F34 /* Collidable.swift */,
@@ -652,7 +649,6 @@
 				5FFD187129391BFB00EB0F34 /* FirstLevel.swift in Sources */,
 				5FFD187729391BFB00EB0F34 /* AudioFiles.swift in Sources */,
 				5FFD186229391BFB00EB0F34 /* EnemyMovevement.swift in Sources */,
-				5FFD185C29391BFB00EB0F34 /* TextBox.swift in Sources */,
 				5FFD186429391BFB00EB0F34 /* AnimationSet.swift in Sources */,
 				801FCC36293BE0030079E6F7 /* FirstLevelWords.swift in Sources */,
 				5FFD187329391BFB00EB0F34 /* SceneManager.swift in Sources */,
